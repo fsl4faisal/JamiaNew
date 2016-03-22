@@ -12,37 +12,41 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class StudentDaoImpl implements StudentDao {
 
+	
 	@Autowired
 	private SessionFactory session;
 
 	@Override
-	public void add(Student student) {
+	public Student save(Student student) {
 		session.getCurrentSession().save(student);
+		return student;
 
 	}
-
+	
 	@Override
-	public void edit(Student student) {
+	public Student update(Student student) {
 		session.getCurrentSession().update(student);
+		return student;
 
 	}
 
 	@Override
-	public void delete(int studentId) {
-		session.getCurrentSession().delete(getStudent(studentId));
+	public void delete(Student student) {
+		session.getCurrentSession().delete(student);
 
 	}
 
 	@Override
-	public Student getStudent(int studentId) {
+	public Student findOne(long studentId) {
 		return (Student) session.getCurrentSession().get(Student.class, studentId);
 
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Student> getAllStudent() {
+	public List<Student> findAll() {
 		return session.getCurrentSession().createQuery("from Student").list();
 	}
+
 
 }

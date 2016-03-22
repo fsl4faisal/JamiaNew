@@ -45,4 +45,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.findAll();
 	}
 
+	@Transactional
+	public List<User> listAdminAndHod() {
+		return userDao.listAdminAndHod();
+	}
+
 }

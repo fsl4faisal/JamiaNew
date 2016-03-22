@@ -1,5 +1,6 @@
 package in.jmi.controller;
 
+import in.jmi.service.StudentService;
 import in.jmi.service.SubjectService;
 import in.jmi.service.UserService;
 
@@ -17,6 +18,9 @@ public class AdminController {
 	
 	@Autowired
 	private SubjectService subjectService;
+	
+	@Autowired
+	private StudentService studentService;
 
 	/*
 	 * Displaying Admin Home page with all the information from users and
@@ -27,9 +31,9 @@ public class AdminController {
 	public String getAdminHome(Model model) {
 
 		//TODO change it to exclude students from here
-		model.addAttribute("users", userService.findAll());
+		model.addAttribute("users", userService.listAdminAndHod());
 		model.addAttribute("subjects", subjectService.findAll());
-		//model.addAttribute("students", studentRepository.findAll());
+		model.addAttribute("students", studentService.findAll());
 		return "admin/AdminHome";
 	}
 

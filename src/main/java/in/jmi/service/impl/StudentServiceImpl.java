@@ -11,38 +11,37 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
 
 	@Autowired
 	private StudentDao studentDao;
-	
 
 	@Transactional
-	public void add(Student student) {
-		studentDao.add(student);
-		
+	public Student save(Student student) {
+		studentDao.save(student);
+		return student;
 	}
 
 	@Transactional
-	public void edit(Student student) {
-		studentDao.edit(student);
-		
+	public Student update(Student student) {
+		studentDao.update(student);
+		return student;
 	}
 
 	@Transactional
-	public void delete(int studentId) {
-		studentDao.delete(studentId);
-		
+	public void delete(Student student) {
+		studentDao.delete(student);
+
 	}
 
 	@Transactional
-	public Student getStudent(int studentId) {
-		return studentDao.getStudent(studentId);
+	public Student findOne(long studentId) {
+		return studentDao.findOne(studentId);
 	}
 
 	@Transactional
-	public List<Student> getAllStudent() {
-		return studentDao.getAllStudent();
+	public List<Student> findAll() {
+		return studentDao.findAll();
 	}
 
 }

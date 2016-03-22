@@ -1,5 +1,6 @@
 package in.jmi.dao.impl;
 
+import in.jmi.constants.Role;
 import in.jmi.dao.UserDao;
 import in.jmi.model.User;
 
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class UserDaoImpl implements UserDao {
-	
+
 	@Autowired
 	private SessionFactory session;
 
@@ -21,7 +22,7 @@ public class UserDaoImpl implements UserDao {
 		return user;
 
 	}
-	
+
 	@Override
 	public User update(User user) {
 		session.getCurrentSession().update(user);
@@ -45,6 +46,12 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> findAll() {
 		return session.getCurrentSession().createQuery("from User").list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<User> listAdminAndHod() {
+		return session.getCurrentSession().createQuery("from User u where u.role='"+Role.ADMIN.getValue()+ "' OR "+"u.role='"+Role.HEAD_OF_DEPARTMENT.getValue()+"'").list();
 	}
 
 }

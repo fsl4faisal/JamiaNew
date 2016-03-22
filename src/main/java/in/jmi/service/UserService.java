@@ -10,5 +10,6 @@ public interface UserService {
 	public void delete(User user);
 	public User findOne(long userId);
 	public List<User> findAll();
+	public List<User> listAdminAndHod();
 
 }

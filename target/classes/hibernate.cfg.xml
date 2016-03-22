@@ -14,6 +14,10 @@
 
 		<mapping class="in.jmi.model.User" />
 		<mapping class="in.jmi.model.Subject" />
+		<mapping class="in.jmi.model.Address" />
+		<mapping class="in.jmi.model.Student" />
+		<mapping class="in.jmi.model.DisqualifiedDescription" />
+		<mapping class="in.jmi.model.PlaceOfBirth" />
 
 	</session-factory>
 

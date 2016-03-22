@@ -4,10 +4,11 @@ import in.jmi.constants.Role;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -16,16 +17,15 @@ public class User extends UrlEntity{
 	
 	@Column(name="NAME", nullable = false)
 	@NotEmpty(message="Name: Name can not be empty")
-	@NotBlank(message="Name: Name can not be blank")
 	private String name;
 	
 	@Column(name="ROLE", nullable = false)
 	@NotNull(message="Role: Role can not be left blank")
+	@Enumerated(EnumType.STRING)
 	private Role role;
 	
 	@Column(name = "EMAIL_ADDRESS", nullable = false)
 	@NotEmpty(message="Email Address: email address can not be empty")
-	@NotBlank(message="Email Address: email address can not be blank")
 	private String emailAddress;
 	
 	public User(){}
