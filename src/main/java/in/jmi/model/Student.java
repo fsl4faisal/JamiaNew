@@ -19,6 +19,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -26,10 +27,14 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "STUDENT")
 public class Student extends UrlEntity {
+	
+	@Transient
+	MultipartFile studentPhoto;
 
 	@Column(name = "COURSE_TYPE", nullable = false)
 	@NotNull(message = "Course Type: Course Type can not be left blank")
@@ -317,24 +322,36 @@ public class Student extends UrlEntity {
 	public void setStudentId(String studentId) {
 		this.studentId = studentId;
 	}
+	
+
+	public MultipartFile getStudentPhoto() {
+		return studentPhoto;
+	}
+
+	public void setStudentPhoto(MultipartFile studentPhoto) {
+		this.studentPhoto = studentPhoto;
+	}
 
 	@Override
 	public String toString() {
-		return "Student [user=" + user + ", examinationName=" + examinationName
-				+ ", semesterName=" + semesterName + ", year=" + year
-				+ ", dateOfBirth=" + dateOfBirth + ", placeOfBirth="
-				+ placeOfBirth + ", nationality=" + nationality + ", religion="
-				+ religion + ", gender=" + gender + ", fatherName="
-				+ fatherName + ", motherName=" + motherName + ", spouseName="
-				+ spouseName + ", correspondenceAddress="
+		return "Student [studentPhoto=" + studentPhoto + ", courseType="
+				+ courseType + ", user=" + user + ", examinationName="
+				+ examinationName + ", semesterName=" + semesterName
+				+ ", year=" + year + ", dateOfBirth=" + dateOfBirth
+				+ ", placeOfBirth=" + placeOfBirth + ", nationality="
+				+ nationality + ", religion=" + religion + ", gender=" + gender
+				+ ", fatherName=" + fatherName + ", motherName=" + motherName
+				+ ", spouseName=" + spouseName + ", correspondenceAddress="
 				+ correspondenceAddress + ", permanentAddress="
 				+ permanentAddress + ", mobileNumber=" + mobileNumber
 				+ ", mediumOfExamination=" + mediumOfExamination
 				+ ", enrollmentNumber=" + enrollmentNumber + ", quotaFlag="
 				+ quotaFlag + ", disqualifiedDescription="
 				+ disqualifiedDescription + ", subjectTaken=" + subjectTaken
-				+ ", approveByHodFlag=" + approveByHodFlag + ", courseType="
-				+ courseType + ", studentId=" + studentId + "]";
+				+ ", approveByHodFlag=" + approveByHodFlag + ", studentId="
+				+ studentId + "]";
 	}
+
+	
 
 }
