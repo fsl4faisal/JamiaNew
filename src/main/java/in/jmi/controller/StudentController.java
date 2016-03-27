@@ -9,11 +9,18 @@ import in.jmi.constants.Role;
 import in.jmi.constants.Semester;
 import in.jmi.model.Student;
 import in.jmi.service.StudentService;
+import in.jmi.util.PhotoValidator;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.imageio.ImageIO;
+import javax.servlet.ServletContext;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +42,11 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 
+	@Autowired
+	PhotoValidator photoValidator;
+
+	@Autowired
+	ServletContext servletContext;
 
 	/*
 	 * 
@@ -46,6 +58,11 @@ public class StudentController {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(
 				dateFormat, true));
+	}
+
+	@InitBinder
+	protected void initBinderFileBucket(WebDataBinder binder) {
+		binder.setValidator(photoValidator);
 	}
 
 	@RequestMapping(value = "/student", params = "add", method = RequestMethod.GET)
@@ -68,7 +85,7 @@ public class StudentController {
 
 	@RequestMapping(value = "/student", params = "add", method = RequestMethod.POST)
 	public String postAddStudent(@ModelAttribute @Valid Student student,
-			BindingResult result, Model model) {
+			BindingResult result, Model model) throws IOException {
 
 		if (result.hasErrors()) {
 			System.out.println(result.getAllErrors().toString());
@@ -86,10 +103,26 @@ public class StudentController {
 
 			return "student/add";
 		} else {
+
+			String PROFILE_UPLOAD_LOCATION = servletContext.getRealPath("/")
+					+ File.separator + "resources" + File.separator
+					+ "profile_images" + File.separator;
+
 			System.out.println("Inside postAddStudent");
 			System.out.println(student);
 			student = studentService.save(student);
+
+			// saving student first into the database because it would generate
+			// id for me and i would use the same id for saving the profile pic
+
+			BufferedImage src = ImageIO.read(new ByteArrayInputStream(student
+					.getStudentPhoto().getBytes()));
+			File destination = new File(PROFILE_UPLOAD_LOCATION
+					+ student.getId() + ".jpg"); // something like C:/Users/tom/Documents/nameBasedOnSomeId.png
+			ImageIO.write(src, "jpg", destination);
+
 			return "redirect:student?id=" + student.getId();
+
 
 		}
 
@@ -202,5 +235,4 @@ public class StudentController {
 		return "student/view_all";
 	}
 
-	
 }

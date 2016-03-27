@@ -90,7 +90,19 @@ public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t<p>Below are the details from the database</p>\r\n");
       out.write("\t\t\t\t\t<table class=\"table table-bordered\">\r\n");
       out.write("\t\t\t\t\t\t<tbody>\r\n");
-      out.write("\t\t\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<th scope=\"row\">Photo</th>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<td><img\r\n");
+      out.write("\t\t\t\t\t\t\t\t\tsrc=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/resources/profile_images/");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${student.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write(".jpg\"\r\n");
+      out.write("\t\t\t\t\t\t\t\t\theight=\"100\" width=\"100\" /></td>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t\t\t</tr>\r\n");
+      out.write("\r\n");
+      out.write("\t\t\t\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t\t\t\t<th scope=\"row\">Role</th>\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${student.user.role.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
@@ -366,13 +378,13 @@ public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag _jspx_th_fmt_005fformatDate_005f0 = (org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag) _005fjspx_005ftagPool_005ffmt_005fformatDate_0026_005fvalue_005ftype_005ftimeStyle_005fpattern_005fnobody.get(org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag.class);
     _jspx_th_fmt_005fformatDate_005f0.setPageContext(_jspx_page_context);
     _jspx_th_fmt_005fformatDate_005f0.setParent(null);
-    // /WEB-INF/view/student/view.jsp(66,12) name = type type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/view.jsp(74,12) name = type type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_fmt_005fformatDate_005f0.setType("date");
-    // /WEB-INF/view/student/view.jsp(66,12) name = pattern type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/view.jsp(74,12) name = pattern type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_fmt_005fformatDate_005f0.setPattern("dd/MM/yyyy");
-    // /WEB-INF/view/student/view.jsp(66,12) name = timeStyle type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/view.jsp(74,12) name = timeStyle type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_fmt_005fformatDate_005f0.setTimeStyle("short");
-    // /WEB-INF/view/student/view.jsp(66,12) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/view.jsp(74,12) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_fmt_005fformatDate_005f0.setValue((java.util.Date) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${student.dateOfBirth}", java.util.Date.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_fmt_005fformatDate_005f0 = _jspx_th_fmt_005fformatDate_005f0.doStartTag();
     if (_jspx_th_fmt_005fformatDate_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

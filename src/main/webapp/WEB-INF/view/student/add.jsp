@@ -66,8 +66,15 @@
 				<div class="col-md-4">
 					<h2>Add Student</h2>
 					<form:form action="student" method="post" role="form"
-						commandName="student">
+						commandName="student" enctype="multipart/form-data">
 						<form:errors path="*" cssClass="errorblock" element="div" />
+						
+						<div class="form-group ">
+							<label for="year">Photo:</label>
+							<form:input type="file" class="form-control" path="studentPhoto"
+								id="studentPhoto" placeholder="Upload Photo" required="required" />
+						</div>
+						
 
 						<div class="form-group">
 							<label for="role">Role:</label>
