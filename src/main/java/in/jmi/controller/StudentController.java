@@ -26,7 +26,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -58,12 +57,13 @@ public class StudentController {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(
 				dateFormat, true));
+		// binder.setValidator(photoValidator);
 	}
 
-	@InitBinder
-	protected void initBinderFileBucket(WebDataBinder binder) {
-		binder.setValidator(photoValidator);
-	}
+	// @InitBinder
+	// protected void initBinderStudent(WebDataBinder binder) {
+	// binder.setValidator(photoValidator);
+	// }
 
 	@RequestMapping(value = "/student", params = "add", method = RequestMethod.GET)
 	public String getAddStudent(Model model) {
@@ -104,25 +104,21 @@ public class StudentController {
 			return "student/add";
 		} else {
 
-			String PROFILE_UPLOAD_LOCATION = servletContext.getRealPath("/")
-					+ File.separator + "resources" + File.separator
-					+ "profile_images" + File.separator;
-
 			System.out.println("Inside postAddStudent");
 			System.out.println(student);
 			student = studentService.save(student);
 
-			// saving student first into the database because it would generate
-			// id for me and i would use the same id for saving the profile pic
+			String PROFILE_UPLOAD_LOCATION = servletContext.getRealPath("/")
+					+ File.separator + "resources" + File.separator
+					+ "student_images" + File.separator;
 
-			BufferedImage src = ImageIO.read(new ByteArrayInputStream(student
+			BufferedImage photo = ImageIO.read(new ByteArrayInputStream(student
 					.getStudentPhoto().getBytes()));
 			File destination = new File(PROFILE_UPLOAD_LOCATION
-					+ student.getId() + ".jpg"); // something like C:/Users/tom/Documents/nameBasedOnSomeId.png
-			ImageIO.write(src, "jpg", destination);
+					+ student.getId() + "_photo" + ".jpg");
+			ImageIO.write(photo, "jpg", destination);
 
 			return "redirect:student?id=" + student.getId();
-
 
 		}
 
@@ -131,13 +127,6 @@ public class StudentController {
 	@RequestMapping(value = "/student", method = RequestMethod.GET)
 	public String postAddStudent(@RequestParam("id") long id, Model model) {
 		model.addAttribute("student", studentService.findOne(id));
-		model.addAttribute("examination_names", ExaminationName.values());
-		model.addAttribute("flags", Flag.values());
-		model.addAttribute("genders", Gender.values());
-		model.addAttribute("medium_of_examinations",
-				MediumOfExamination.values());
-		model.addAttribute("semesters", Semester.values());
-		model.addAttribute("course_types", CourseType.values());
 		return "student/view";
 	}
 
@@ -162,34 +151,57 @@ public class StudentController {
 	}
 
 	@RequestMapping(value = "/student", params = "edit", method = RequestMethod.POST)
-	@Transactional
-	public String postEditStudent(@ModelAttribute Student student) {
-		Student updatedStudent = studentService.findOne(student.getId());
+	public String postEditStudent(@ModelAttribute @Valid Student student,
+			BindingResult result, Model model) {
 
-		updatedStudent.setCourseType(student.getCourseType());
-		updatedStudent.setExaminationName(student.getExaminationName());
-		updatedStudent.setYear(student.getYear());
-		updatedStudent.setSemesterName(student.getSemesterName());
-		updatedStudent.setUser(student.getUser());
-		updatedStudent.setDateOfBirth(student.getDateOfBirth());
-		updatedStudent.setPlaceOfBirth(student.getPlaceOfBirth());
-		updatedStudent.setNationality(student.getNationality());
-		updatedStudent.setReligion(student.getReligion());
-		updatedStudent.setGender(student.getGender());
-		updatedStudent.setFatherName(student.getFatherName());
-		updatedStudent.setMotherName(student.getMotherName());
-		updatedStudent.setSpouseName(student.getSpouseName());
-		updatedStudent.setMobileNumber(student.getMobileNumber());
-		updatedStudent.setCorrespondenceAddress(student
-				.getCorrespondenceAddress());
-		updatedStudent.setPermanentAddress(student.getPermanentAddress());
-		updatedStudent.setMediumOfExamination(student.getMediumOfExamination());
-		updatedStudent.setEnrollmentNumber(student.getEnrollmentNumber());
-		updatedStudent.setStudentId(student.getStudentId());
-		updatedStudent.setQuotaFlag(student.getQuotaFlag());
+		if (result.hasErrors()) {
+			System.out.println(result.getAllErrors().toString());
 
-		updatedStudent = studentService.update(updatedStudent);
-		return "redirect:student?id=" + updatedStudent.getId();
+			model.addAttribute("examination_names", ExaminationName.values());
+			model.addAttribute("flags", Flag.values());
+			model.addAttribute("genders", Gender.values());
+			model.addAttribute("medium_of_examinations",
+					MediumOfExamination.values());
+			model.addAttribute("semesters", Semester.values());
+			model.addAttribute("course_types", CourseType.values());
+
+			ArrayList<Role> roles = new ArrayList<Role>();
+			// sending the role of student only since it can not be changed to
+			// anything else
+			roles.add(Role.STUDENT);
+			model.addAttribute("roles", roles);
+			return "student/edit";
+		} else {
+			Student updatedStudent = studentService.findOne(student.getId());
+
+			updatedStudent.setCourseType(student.getCourseType());
+			updatedStudent.setExaminationName(student.getExaminationName());
+			updatedStudent.setYear(student.getYear());
+			updatedStudent.setSemesterName(student.getSemesterName());
+			updatedStudent.setUser(student.getUser());
+			updatedStudent.setDateOfBirth(student.getDateOfBirth());
+			updatedStudent.setPlaceOfBirth(student.getPlaceOfBirth());
+			updatedStudent.setNationality(student.getNationality());
+			updatedStudent.setReligion(student.getReligion());
+			updatedStudent.setGender(student.getGender());
+			updatedStudent.setFatherName(student.getFatherName());
+			updatedStudent.setMotherName(student.getMotherName());
+			updatedStudent.setSpouseName(student.getSpouseName());
+			updatedStudent.setMobileNumber(student.getMobileNumber());
+			updatedStudent.setCorrespondenceAddress(student
+					.getCorrespondenceAddress());
+			updatedStudent.setPermanentAddress(student.getPermanentAddress());
+			updatedStudent.setMediumOfExamination(student
+					.getMediumOfExamination());
+			updatedStudent.setEnrollmentNumber(student.getEnrollmentNumber());
+			updatedStudent.setStudentId(student.getStudentId());
+			updatedStudent.setQuotaFlag(student.getQuotaFlag());
+
+			updatedStudent = studentService.update(updatedStudent);
+			return "redirect:student?id=" + updatedStudent.getId();
+
+		}
+
 	}
 
 	@RequestMapping(value = "/student", params = "delete", method = RequestMethod.POST)
@@ -200,39 +212,65 @@ public class StudentController {
 
 	/*
 	 * 
-	 * Student Rustigated CRUD
+	 * Student Rustigated and exam form including photo and signature upload
+	 * CRUD
 	 */
 
-	@RequestMapping(value = "/rustigatedDetails", params = "edit", method = RequestMethod.GET)
-	public String getEditRustigatedDetails(@RequestParam("id") long id,
-			Model model) {
+	@RequestMapping(value = "/examForm", params = "edit", method = RequestMethod.GET)
+	public String getEditExamForm(@RequestParam("id") long id, Model model) {
 
 		model.addAttribute("student", studentService.findOne(id));
 		model.addAttribute("flags", Flag.values());
 
-		return "student/editRustigatedDetails";
+		return "examForm/edit";
 	}
 
-	@RequestMapping(value = "/rustigatedDetails", params = "edit", method = RequestMethod.POST)
-	@Transactional
-	public String postEditRustigatedDetails(@ModelAttribute Student student) {
-		Student updatedStudent = studentService.findOne(student.getId());
+	@RequestMapping(value = "/examForm", params = "edit", method = RequestMethod.POST)
+	public String postEditExamForm(@ModelAttribute @Valid Student student,
+			BindingResult result, Model model) throws IOException {
 
-		updatedStudent.setDisqualifiedDescription(student
-				.getDisqualifiedDescription());
-		System.out.println("Inside postEditRustigatedDetails");
-		System.out.println(student);
-		System.out.println("Updated Student");
-		System.out.println(updatedStudent);
-		student = studentService.update(updatedStudent);
-		return "redirect:rustigatedDetails?id=" + updatedStudent.getId();
+		String PROFILE_UPLOAD_LOCATION = servletContext.getRealPath("/")
+				+ File.separator + "resources" + File.separator
+				+ "student_images" + File.separator;
+
+		if (result.hasErrors()) {
+			model.addAttribute("flags", Flag.values());
+			return "examForm/edit";
+
+		} else {
+
+			Student updatedStudent = studentService.findOne(student.getId());
+
+			updatedStudent.setDisqualifiedDescription(student
+					.getDisqualifiedDescription());
+			student = studentService.update(updatedStudent);
+
+			// saving student first into the database because it would generate
+			// id for me and i would use the same id for saving the profile pic
+
+			BufferedImage photo = ImageIO.read(new ByteArrayInputStream(student
+					.getStudentPhoto().getBytes()));
+			File destination = new File(PROFILE_UPLOAD_LOCATION
+					+ student.getId() + "_photo" + ".jpg");
+			ImageIO.write(photo, "jpg", destination);
+
+			// BufferedImage signature = ImageIO.read(new
+			// ByteArrayInputStream(student
+			// .getStudentSignature().getBytes()));
+			// destination = new File(PROFILE_UPLOAD_LOCATION + student.getId()
+			// + "_signature" + ".jpg");
+			// ImageIO.write(signature, "jpg", destination);
+
+			return "redirect:examForm?id=" + updatedStudent.getId();
+
+		}
+
 	}
 
-	@RequestMapping(value = "/rustigatedDetails", method = RequestMethod.GET)
-	public String postEditRustigatedDetails(@RequestParam("id") long id,
-			Model model) {
+	@RequestMapping(value = "/examForm", method = RequestMethod.GET)
+	public String getExamForm(@RequestParam("id") long id, Model model) {
 		model.addAttribute("student", studentService.findOne(id));
-		return "student/view_all";
+		return "examForm/view";
 	}
 
 }

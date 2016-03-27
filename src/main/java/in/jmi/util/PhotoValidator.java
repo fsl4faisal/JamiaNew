@@ -18,14 +18,14 @@ public class PhotoValidator implements Validator{
 	public void validate(Object target, Errors errors) {
 		Student student=(Student)target;
 		
-		if(student.getStudentPhoto()!=null){
-			if(student.getStudentPhoto().getSize()==0){
-				errors.rejectValue("file", "missing.file");
-			}
-		}
-		if(!student.getStudentPhoto().getOriginalFilename().endsWith(".jpg")){
-			errors.rejectValue("file", "invalid.file");
-		}
+//		if(student.getStudentPhoto()!=null){
+//			if(student.getStudentPhoto().getSize()==0){
+//				errors.rejectValue("file", "missing.file");
+//			}
+//		}
+//		if(!student.getStudentPhoto().getOriginalFilename().endsWith(".jpg")){
+//			errors.rejectValue("file", "invalid.file");
+//		}
 	}
 
 }

@@ -185,15 +185,14 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
               _005fjspx_005ftagPool_005fform_005ferrors_0026_005fpath_005felement_005fcssClass_005fnobody.reuse(_jspx_th_form_005ferrors_005f0);
             }
             out.write("\r\n");
-            out.write("\t\t\t\t\t\t\r\n");
+            out.write("\r\n");
             out.write("\t\t\t\t\t\t<div class=\"form-group \">\r\n");
-            out.write("\t\t\t\t\t\t\t<label for=\"year\">Photo:</label>\r\n");
+            out.write("\t\t\t\t\t\t\t<label for=\"photo\">Photo:</label>\r\n");
             out.write("\t\t\t\t\t\t\t");
             if (_jspx_meth_form_005finput_005f0(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
               return;
             out.write("\r\n");
             out.write("\t\t\t\t\t\t</div>\r\n");
-            out.write("\t\t\t\t\t\t\r\n");
             out.write("\r\n");
             out.write("\t\t\t\t\t\t<div class=\"form-group\">\r\n");
             out.write("\t\t\t\t\t\t\t<label for=\"role\">Role:</label>\r\n");
@@ -471,7 +470,7 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     // /WEB-INF/view/student/add.jsp(74,7) null
     _jspx_th_form_005finput_005f0.setDynamicAttribute(null, "type", new String("file"));
     // /WEB-INF/view/student/add.jsp(74,7) null
-    _jspx_th_form_005finput_005f0.setDynamicAttribute(null, "class", new String("form-control"));
+    _jspx_th_form_005finput_005f0.setDynamicAttribute(null, "class", new String("filestyle"));
     // /WEB-INF/view/student/add.jsp(74,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f0.setPath("studentPhoto");
     // /WEB-INF/view/student/add.jsp(74,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -505,13 +504,13 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_005fselect_005f0 = (org.springframework.web.servlet.tags.form.SelectTag) _005fjspx_005ftagPool_005fform_005fselect_0026_005frequired_005fpath_005fid_005fclass.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_005fselect_005f0.setPageContext(_jspx_page_context);
     _jspx_th_form_005fselect_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(81,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(80,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f0.setPath("user.role");
-    // /WEB-INF/view/student/add.jsp(81,7) null
+    // /WEB-INF/view/student/add.jsp(80,7) null
     _jspx_th_form_005fselect_005f0.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(81,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(80,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f0.setId("role");
-    // /WEB-INF/view/student/add.jsp(81,7) null
+    // /WEB-INF/view/student/add.jsp(80,7) null
     _jspx_th_form_005fselect_005f0.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005fselect_005f0 = new int[] { 0 };
     try {
@@ -551,9 +550,9 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f0);
-    // /WEB-INF/view/student/add.jsp(83,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(82,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("role");
-    // /WEB-INF/view/student/add.jsp(83,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(82,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${roles}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -595,15 +594,15 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_005fselect_005f1 = (org.springframework.web.servlet.tags.form.SelectTag) _005fjspx_005ftagPool_005fform_005fselect_0026_005frequired_005fplaceholder_005fpath_005fid_005fclass.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_005fselect_005f1.setPageContext(_jspx_page_context);
     _jspx_th_form_005fselect_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(91,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(90,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f1.setPath("courseType");
-    // /WEB-INF/view/student/add.jsp(91,7) null
+    // /WEB-INF/view/student/add.jsp(90,7) null
     _jspx_th_form_005fselect_005f1.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(91,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(90,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f1.setId("courseType");
-    // /WEB-INF/view/student/add.jsp(91,7) null
+    // /WEB-INF/view/student/add.jsp(90,7) null
     _jspx_th_form_005fselect_005f1.setDynamicAttribute(null, "placeholder", new String("Enter Course Type"));
-    // /WEB-INF/view/student/add.jsp(91,7) null
+    // /WEB-INF/view/student/add.jsp(90,7) null
     _jspx_th_form_005fselect_005f1.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005fselect_005f1 = new int[] { 0 };
     try {
@@ -644,9 +643,9 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f1);
-    // /WEB-INF/view/student/add.jsp(95,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(94,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f1.setVar("course_type");
-    // /WEB-INF/view/student/add.jsp(95,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(94,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${course_types}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f1 = new int[] { 0 };
     try {
@@ -688,15 +687,15 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_005fselect_005f2 = (org.springframework.web.servlet.tags.form.SelectTag) _005fjspx_005ftagPool_005fform_005fselect_0026_005frequired_005fplaceholder_005fpath_005fid_005fclass.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_005fselect_005f2.setPageContext(_jspx_page_context);
     _jspx_th_form_005fselect_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(104,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(103,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f2.setPath("examinationName");
-    // /WEB-INF/view/student/add.jsp(104,7) null
+    // /WEB-INF/view/student/add.jsp(103,7) null
     _jspx_th_form_005fselect_005f2.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(104,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(103,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f2.setId("examinationName");
-    // /WEB-INF/view/student/add.jsp(104,7) null
+    // /WEB-INF/view/student/add.jsp(103,7) null
     _jspx_th_form_005fselect_005f2.setDynamicAttribute(null, "placeholder", new String("Enter Examination Name"));
-    // /WEB-INF/view/student/add.jsp(104,7) null
+    // /WEB-INF/view/student/add.jsp(103,7) null
     _jspx_th_form_005fselect_005f2.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005fselect_005f2 = new int[] { 0 };
     try {
@@ -737,9 +736,9 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f2 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f2.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f2);
-    // /WEB-INF/view/student/add.jsp(108,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(107,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f2.setVar("examination_name");
-    // /WEB-INF/view/student/add.jsp(108,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(107,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f2.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${examination_names}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f2 = new int[] { 0 };
     try {
@@ -781,17 +780,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f1 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f1.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(116,7) null
+    // /WEB-INF/view/student/add.jsp(115,7) null
     _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "type", new String("number"));
-    // /WEB-INF/view/student/add.jsp(116,7) null
+    // /WEB-INF/view/student/add.jsp(115,7) null
     _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(116,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(115,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f1.setPath("year");
-    // /WEB-INF/view/student/add.jsp(116,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(115,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f1.setId("year");
-    // /WEB-INF/view/student/add.jsp(116,7) null
+    // /WEB-INF/view/student/add.jsp(115,7) null
     _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "placeholder", new String("Enter year"));
-    // /WEB-INF/view/student/add.jsp(116,7) null
+    // /WEB-INF/view/student/add.jsp(115,7) null
     _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f1 = new int[] { 0 };
     try {
@@ -818,15 +817,15 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_005fselect_005f3 = (org.springframework.web.servlet.tags.form.SelectTag) _005fjspx_005ftagPool_005fform_005fselect_0026_005frequired_005fplaceholder_005fpath_005fid_005fclass.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_005fselect_005f3.setPageContext(_jspx_page_context);
     _jspx_th_form_005fselect_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(122,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(121,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f3.setPath("semesterName");
-    // /WEB-INF/view/student/add.jsp(122,7) null
+    // /WEB-INF/view/student/add.jsp(121,7) null
     _jspx_th_form_005fselect_005f3.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(122,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(121,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f3.setId("semesterName");
-    // /WEB-INF/view/student/add.jsp(122,7) null
+    // /WEB-INF/view/student/add.jsp(121,7) null
     _jspx_th_form_005fselect_005f3.setDynamicAttribute(null, "placeholder", new String("Enter semester Name"));
-    // /WEB-INF/view/student/add.jsp(122,7) null
+    // /WEB-INF/view/student/add.jsp(121,7) null
     _jspx_th_form_005fselect_005f3.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005fselect_005f3 = new int[] { 0 };
     try {
@@ -867,9 +866,9 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f3 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f3.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f3);
-    // /WEB-INF/view/student/add.jsp(126,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(125,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f3.setVar("semester");
-    // /WEB-INF/view/student/add.jsp(126,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(125,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f3.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${semesters}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f3 = new int[] { 0 };
     try {
@@ -911,17 +910,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f2 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f2.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(134,7) null
+    // /WEB-INF/view/student/add.jsp(133,7) null
     _jspx_th_form_005finput_005f2.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(134,7) null
+    // /WEB-INF/view/student/add.jsp(133,7) null
     _jspx_th_form_005finput_005f2.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(134,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(133,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f2.setPath("user.name");
-    // /WEB-INF/view/student/add.jsp(134,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(133,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f2.setId("name");
-    // /WEB-INF/view/student/add.jsp(134,7) null
+    // /WEB-INF/view/student/add.jsp(133,7) null
     _jspx_th_form_005finput_005f2.setDynamicAttribute(null, "placeholder", new String("Enter Name"));
-    // /WEB-INF/view/student/add.jsp(134,7) null
+    // /WEB-INF/view/student/add.jsp(133,7) null
     _jspx_th_form_005finput_005f2.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f2 = new int[] { 0 };
     try {
@@ -948,15 +947,15 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f3 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f3.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(142,7) null
+    // /WEB-INF/view/student/add.jsp(141,7) null
     _jspx_th_form_005finput_005f3.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(142,7) null
+    // /WEB-INF/view/student/add.jsp(141,7) null
     _jspx_th_form_005finput_005f3.setDynamicAttribute(null, "class", new String("form-control readonly"));
-    // /WEB-INF/view/student/add.jsp(142,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(141,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f3.setPath("dateOfBirth");
-    // /WEB-INF/view/student/add.jsp(142,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(141,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f3.setId("datepicker");
-    // /WEB-INF/view/student/add.jsp(142,7) null
+    // /WEB-INF/view/student/add.jsp(141,7) null
     _jspx_th_form_005finput_005f3.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f3 = new int[] { 0 };
     try {
@@ -983,17 +982,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f4 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f4.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(149,7) null
+    // /WEB-INF/view/student/add.jsp(148,7) null
     _jspx_th_form_005finput_005f4.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(149,7) null
+    // /WEB-INF/view/student/add.jsp(148,7) null
     _jspx_th_form_005finput_005f4.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(149,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(148,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f4.setPath("placeOfBirth.town");
-    // /WEB-INF/view/student/add.jsp(149,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(148,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f4.setId("placeOfBirth.town");
-    // /WEB-INF/view/student/add.jsp(149,7) null
+    // /WEB-INF/view/student/add.jsp(148,7) null
     _jspx_th_form_005finput_005f4.setDynamicAttribute(null, "placeholder", new String("Enter Town"));
-    // /WEB-INF/view/student/add.jsp(149,7) null
+    // /WEB-INF/view/student/add.jsp(148,7) null
     _jspx_th_form_005finput_005f4.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f4 = new int[] { 0 };
     try {
@@ -1020,17 +1019,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f5 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f5.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(152,7) null
+    // /WEB-INF/view/student/add.jsp(151,7) null
     _jspx_th_form_005finput_005f5.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(152,7) null
+    // /WEB-INF/view/student/add.jsp(151,7) null
     _jspx_th_form_005finput_005f5.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(152,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(151,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f5.setPath("placeOfBirth.distt");
-    // /WEB-INF/view/student/add.jsp(152,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(151,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f5.setId("placeOfBirth.distt");
-    // /WEB-INF/view/student/add.jsp(152,7) null
+    // /WEB-INF/view/student/add.jsp(151,7) null
     _jspx_th_form_005finput_005f5.setDynamicAttribute(null, "placeholder", new String("Enter Distt"));
-    // /WEB-INF/view/student/add.jsp(152,7) null
+    // /WEB-INF/view/student/add.jsp(151,7) null
     _jspx_th_form_005finput_005f5.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f5 = new int[] { 0 };
     try {
@@ -1057,17 +1056,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f6 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f6.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(155,7) null
+    // /WEB-INF/view/student/add.jsp(154,7) null
     _jspx_th_form_005finput_005f6.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(155,7) null
+    // /WEB-INF/view/student/add.jsp(154,7) null
     _jspx_th_form_005finput_005f6.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(155,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(154,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f6.setPath("placeOfBirth.state");
-    // /WEB-INF/view/student/add.jsp(155,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(154,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f6.setId("placeOfBirth.state");
-    // /WEB-INF/view/student/add.jsp(155,7) null
+    // /WEB-INF/view/student/add.jsp(154,7) null
     _jspx_th_form_005finput_005f6.setDynamicAttribute(null, "placeholder", new String("Enter State"));
-    // /WEB-INF/view/student/add.jsp(155,7) null
+    // /WEB-INF/view/student/add.jsp(154,7) null
     _jspx_th_form_005finput_005f6.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f6 = new int[] { 0 };
     try {
@@ -1094,17 +1093,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f7 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f7.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(162,7) null
+    // /WEB-INF/view/student/add.jsp(161,7) null
     _jspx_th_form_005finput_005f7.setDynamicAttribute(null, "type", new String("email"));
-    // /WEB-INF/view/student/add.jsp(162,7) null
+    // /WEB-INF/view/student/add.jsp(161,7) null
     _jspx_th_form_005finput_005f7.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(162,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(161,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f7.setPath("user.emailAddress");
-    // /WEB-INF/view/student/add.jsp(162,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(161,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f7.setId("user.emailAddress");
-    // /WEB-INF/view/student/add.jsp(162,7) null
+    // /WEB-INF/view/student/add.jsp(161,7) null
     _jspx_th_form_005finput_005f7.setDynamicAttribute(null, "placeholder", new String("Enter Email Address"));
-    // /WEB-INF/view/student/add.jsp(162,7) null
+    // /WEB-INF/view/student/add.jsp(161,7) null
     _jspx_th_form_005finput_005f7.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f7 = new int[] { 0 };
     try {
@@ -1131,17 +1130,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f8 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f8.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(169,7) null
+    // /WEB-INF/view/student/add.jsp(168,7) null
     _jspx_th_form_005finput_005f8.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(169,7) null
+    // /WEB-INF/view/student/add.jsp(168,7) null
     _jspx_th_form_005finput_005f8.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(169,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(168,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f8.setPath("nationality");
-    // /WEB-INF/view/student/add.jsp(169,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(168,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f8.setId("nationality");
-    // /WEB-INF/view/student/add.jsp(169,7) null
+    // /WEB-INF/view/student/add.jsp(168,7) null
     _jspx_th_form_005finput_005f8.setDynamicAttribute(null, "placeholder", new String("Enter Nationality"));
-    // /WEB-INF/view/student/add.jsp(169,7) null
+    // /WEB-INF/view/student/add.jsp(168,7) null
     _jspx_th_form_005finput_005f8.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f8 = new int[] { 0 };
     try {
@@ -1168,17 +1167,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f9 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f9.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(176,7) null
+    // /WEB-INF/view/student/add.jsp(175,7) null
     _jspx_th_form_005finput_005f9.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(176,7) null
+    // /WEB-INF/view/student/add.jsp(175,7) null
     _jspx_th_form_005finput_005f9.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(176,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(175,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f9.setPath("religion");
-    // /WEB-INF/view/student/add.jsp(176,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(175,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f9.setId("religion");
-    // /WEB-INF/view/student/add.jsp(176,7) null
+    // /WEB-INF/view/student/add.jsp(175,7) null
     _jspx_th_form_005finput_005f9.setDynamicAttribute(null, "placeholder", new String("Enter Religion"));
-    // /WEB-INF/view/student/add.jsp(176,7) null
+    // /WEB-INF/view/student/add.jsp(175,7) null
     _jspx_th_form_005finput_005f9.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f9 = new int[] { 0 };
     try {
@@ -1205,15 +1204,15 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_005fselect_005f4 = (org.springframework.web.servlet.tags.form.SelectTag) _005fjspx_005ftagPool_005fform_005fselect_0026_005frequired_005fplaceholder_005fpath_005fid_005fclass.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_005fselect_005f4.setPageContext(_jspx_page_context);
     _jspx_th_form_005fselect_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(182,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(181,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f4.setPath("gender");
-    // /WEB-INF/view/student/add.jsp(182,7) null
+    // /WEB-INF/view/student/add.jsp(181,7) null
     _jspx_th_form_005fselect_005f4.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(182,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(181,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f4.setId("gender");
-    // /WEB-INF/view/student/add.jsp(182,7) null
+    // /WEB-INF/view/student/add.jsp(181,7) null
     _jspx_th_form_005fselect_005f4.setDynamicAttribute(null, "placeholder", new String("Enter semester Name"));
-    // /WEB-INF/view/student/add.jsp(182,7) null
+    // /WEB-INF/view/student/add.jsp(181,7) null
     _jspx_th_form_005fselect_005f4.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005fselect_005f4 = new int[] { 0 };
     try {
@@ -1254,9 +1253,9 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f4 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f4.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f4);
-    // /WEB-INF/view/student/add.jsp(185,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(184,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f4.setVar("gender");
-    // /WEB-INF/view/student/add.jsp(185,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(184,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f4.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${genders}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f4 = new int[] { 0 };
     try {
@@ -1298,17 +1297,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f10 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f10.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(193,7) null
+    // /WEB-INF/view/student/add.jsp(192,7) null
     _jspx_th_form_005finput_005f10.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(193,7) null
+    // /WEB-INF/view/student/add.jsp(192,7) null
     _jspx_th_form_005finput_005f10.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(193,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(192,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f10.setPath("fatherName");
-    // /WEB-INF/view/student/add.jsp(193,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(192,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f10.setId("fatherName");
-    // /WEB-INF/view/student/add.jsp(193,7) null
+    // /WEB-INF/view/student/add.jsp(192,7) null
     _jspx_th_form_005finput_005f10.setDynamicAttribute(null, "placeholder", new String("Enter Father Name"));
-    // /WEB-INF/view/student/add.jsp(193,7) null
+    // /WEB-INF/view/student/add.jsp(192,7) null
     _jspx_th_form_005finput_005f10.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f10 = new int[] { 0 };
     try {
@@ -1335,17 +1334,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f11 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f11.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f11.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(200,7) null
+    // /WEB-INF/view/student/add.jsp(199,7) null
     _jspx_th_form_005finput_005f11.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(200,7) null
+    // /WEB-INF/view/student/add.jsp(199,7) null
     _jspx_th_form_005finput_005f11.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(200,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(199,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f11.setPath("motherName");
-    // /WEB-INF/view/student/add.jsp(200,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(199,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f11.setId("motherName");
-    // /WEB-INF/view/student/add.jsp(200,7) null
+    // /WEB-INF/view/student/add.jsp(199,7) null
     _jspx_th_form_005finput_005f11.setDynamicAttribute(null, "placeholder", new String("Enter Mother Name"));
-    // /WEB-INF/view/student/add.jsp(200,7) null
+    // /WEB-INF/view/student/add.jsp(199,7) null
     _jspx_th_form_005finput_005f11.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f11 = new int[] { 0 };
     try {
@@ -1372,17 +1371,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f12 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f12.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f12.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(207,7) null
+    // /WEB-INF/view/student/add.jsp(206,7) null
     _jspx_th_form_005finput_005f12.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(207,7) null
+    // /WEB-INF/view/student/add.jsp(206,7) null
     _jspx_th_form_005finput_005f12.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(207,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(206,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f12.setPath("spouseName");
-    // /WEB-INF/view/student/add.jsp(207,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(206,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f12.setId("spouseName");
-    // /WEB-INF/view/student/add.jsp(207,7) null
+    // /WEB-INF/view/student/add.jsp(206,7) null
     _jspx_th_form_005finput_005f12.setDynamicAttribute(null, "placeholder", new String("Enter Spouse Name"));
-    // /WEB-INF/view/student/add.jsp(207,7) null
+    // /WEB-INF/view/student/add.jsp(206,7) null
     _jspx_th_form_005finput_005f12.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f12 = new int[] { 0 };
     try {
@@ -1409,17 +1408,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f13 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f13.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f13.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(214,7) null
+    // /WEB-INF/view/student/add.jsp(213,7) null
     _jspx_th_form_005finput_005f13.setDynamicAttribute(null, "type", new String("number"));
-    // /WEB-INF/view/student/add.jsp(214,7) null
+    // /WEB-INF/view/student/add.jsp(213,7) null
     _jspx_th_form_005finput_005f13.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(214,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(213,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f13.setPath("mobileNumber");
-    // /WEB-INF/view/student/add.jsp(214,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(213,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f13.setId("mobileNumber");
-    // /WEB-INF/view/student/add.jsp(214,7) null
+    // /WEB-INF/view/student/add.jsp(213,7) null
     _jspx_th_form_005finput_005f13.setDynamicAttribute(null, "placeholder", new String("Enter Mobile Number"));
-    // /WEB-INF/view/student/add.jsp(214,7) null
+    // /WEB-INF/view/student/add.jsp(213,7) null
     _jspx_th_form_005finput_005f13.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f13 = new int[] { 0 };
     try {
@@ -1446,17 +1445,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f14 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f14.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f14.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(222,7) null
+    // /WEB-INF/view/student/add.jsp(221,7) null
     _jspx_th_form_005finput_005f14.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(222,7) null
+    // /WEB-INF/view/student/add.jsp(221,7) null
     _jspx_th_form_005finput_005f14.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(222,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(221,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f14.setPath("correspondenceAddress.street");
-    // /WEB-INF/view/student/add.jsp(222,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(221,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f14.setId("correspondenceAddress.street");
-    // /WEB-INF/view/student/add.jsp(222,7) null
+    // /WEB-INF/view/student/add.jsp(221,7) null
     _jspx_th_form_005finput_005f14.setDynamicAttribute(null, "placeholder", new String("Enter Street"));
-    // /WEB-INF/view/student/add.jsp(222,7) null
+    // /WEB-INF/view/student/add.jsp(221,7) null
     _jspx_th_form_005finput_005f14.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f14 = new int[] { 0 };
     try {
@@ -1483,17 +1482,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f15 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f15.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f15.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(226,7) null
+    // /WEB-INF/view/student/add.jsp(225,7) null
     _jspx_th_form_005finput_005f15.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(226,7) null
+    // /WEB-INF/view/student/add.jsp(225,7) null
     _jspx_th_form_005finput_005f15.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(226,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(225,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f15.setPath("correspondenceAddress.city");
-    // /WEB-INF/view/student/add.jsp(226,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(225,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f15.setId("correspondenceAddress.city");
-    // /WEB-INF/view/student/add.jsp(226,7) null
+    // /WEB-INF/view/student/add.jsp(225,7) null
     _jspx_th_form_005finput_005f15.setDynamicAttribute(null, "placeholder", new String("Enter City"));
-    // /WEB-INF/view/student/add.jsp(226,7) null
+    // /WEB-INF/view/student/add.jsp(225,7) null
     _jspx_th_form_005finput_005f15.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f15 = new int[] { 0 };
     try {
@@ -1520,17 +1519,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f16 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f16.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f16.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(230,7) null
+    // /WEB-INF/view/student/add.jsp(229,7) null
     _jspx_th_form_005finput_005f16.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(230,7) null
+    // /WEB-INF/view/student/add.jsp(229,7) null
     _jspx_th_form_005finput_005f16.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(230,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(229,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f16.setPath("correspondenceAddress.state");
-    // /WEB-INF/view/student/add.jsp(230,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(229,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f16.setId("correspondenceAddress.state");
-    // /WEB-INF/view/student/add.jsp(230,7) null
+    // /WEB-INF/view/student/add.jsp(229,7) null
     _jspx_th_form_005finput_005f16.setDynamicAttribute(null, "placeholder", new String("Enter State"));
-    // /WEB-INF/view/student/add.jsp(230,7) null
+    // /WEB-INF/view/student/add.jsp(229,7) null
     _jspx_th_form_005finput_005f16.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f16 = new int[] { 0 };
     try {
@@ -1557,17 +1556,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f17 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f17.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f17.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(234,7) null
+    // /WEB-INF/view/student/add.jsp(233,7) null
     _jspx_th_form_005finput_005f17.setDynamicAttribute(null, "type", new String("number"));
-    // /WEB-INF/view/student/add.jsp(234,7) null
+    // /WEB-INF/view/student/add.jsp(233,7) null
     _jspx_th_form_005finput_005f17.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(234,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(233,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f17.setPath("correspondenceAddress.pincode");
-    // /WEB-INF/view/student/add.jsp(234,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(233,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f17.setId("correspondenceAddress.pincode");
-    // /WEB-INF/view/student/add.jsp(234,7) null
+    // /WEB-INF/view/student/add.jsp(233,7) null
     _jspx_th_form_005finput_005f17.setDynamicAttribute(null, "placeholder", new String("Enter Pincode"));
-    // /WEB-INF/view/student/add.jsp(234,7) null
+    // /WEB-INF/view/student/add.jsp(233,7) null
     _jspx_th_form_005finput_005f17.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f17 = new int[] { 0 };
     try {
@@ -1594,17 +1593,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f18 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f18.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f18.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(242,7) null
+    // /WEB-INF/view/student/add.jsp(241,7) null
     _jspx_th_form_005finput_005f18.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(242,7) null
+    // /WEB-INF/view/student/add.jsp(241,7) null
     _jspx_th_form_005finput_005f18.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(242,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(241,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f18.setPath("permanentAddress.street");
-    // /WEB-INF/view/student/add.jsp(242,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(241,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f18.setId("permanentAddress.street");
-    // /WEB-INF/view/student/add.jsp(242,7) null
+    // /WEB-INF/view/student/add.jsp(241,7) null
     _jspx_th_form_005finput_005f18.setDynamicAttribute(null, "placeholder", new String("Enter Street"));
-    // /WEB-INF/view/student/add.jsp(242,7) null
+    // /WEB-INF/view/student/add.jsp(241,7) null
     _jspx_th_form_005finput_005f18.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f18 = new int[] { 0 };
     try {
@@ -1631,17 +1630,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f19 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f19.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f19.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(245,7) null
+    // /WEB-INF/view/student/add.jsp(244,7) null
     _jspx_th_form_005finput_005f19.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(245,7) null
+    // /WEB-INF/view/student/add.jsp(244,7) null
     _jspx_th_form_005finput_005f19.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(245,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(244,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f19.setPath("permanentAddress.city");
-    // /WEB-INF/view/student/add.jsp(245,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(244,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f19.setId("permanentAddress.city");
-    // /WEB-INF/view/student/add.jsp(245,7) null
+    // /WEB-INF/view/student/add.jsp(244,7) null
     _jspx_th_form_005finput_005f19.setDynamicAttribute(null, "placeholder", new String("Enter City"));
-    // /WEB-INF/view/student/add.jsp(245,7) null
+    // /WEB-INF/view/student/add.jsp(244,7) null
     _jspx_th_form_005finput_005f19.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f19 = new int[] { 0 };
     try {
@@ -1668,17 +1667,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f20 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f20.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f20.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(248,7) null
+    // /WEB-INF/view/student/add.jsp(247,7) null
     _jspx_th_form_005finput_005f20.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(248,7) null
+    // /WEB-INF/view/student/add.jsp(247,7) null
     _jspx_th_form_005finput_005f20.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(248,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(247,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f20.setPath("permanentAddress.state");
-    // /WEB-INF/view/student/add.jsp(248,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(247,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f20.setId("permanentAddress.state");
-    // /WEB-INF/view/student/add.jsp(248,7) null
+    // /WEB-INF/view/student/add.jsp(247,7) null
     _jspx_th_form_005finput_005f20.setDynamicAttribute(null, "placeholder", new String("Enter State"));
-    // /WEB-INF/view/student/add.jsp(248,7) null
+    // /WEB-INF/view/student/add.jsp(247,7) null
     _jspx_th_form_005finput_005f20.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f20 = new int[] { 0 };
     try {
@@ -1705,17 +1704,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f21 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f21.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f21.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(251,7) null
+    // /WEB-INF/view/student/add.jsp(250,7) null
     _jspx_th_form_005finput_005f21.setDynamicAttribute(null, "type", new String("number"));
-    // /WEB-INF/view/student/add.jsp(251,7) null
+    // /WEB-INF/view/student/add.jsp(250,7) null
     _jspx_th_form_005finput_005f21.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(251,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(250,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f21.setPath("permanentAddress.pincode");
-    // /WEB-INF/view/student/add.jsp(251,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(250,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f21.setId("permanentAddress.pincode");
-    // /WEB-INF/view/student/add.jsp(251,7) null
+    // /WEB-INF/view/student/add.jsp(250,7) null
     _jspx_th_form_005finput_005f21.setDynamicAttribute(null, "placeholder", new String("Enter Pincode"));
-    // /WEB-INF/view/student/add.jsp(251,7) null
+    // /WEB-INF/view/student/add.jsp(250,7) null
     _jspx_th_form_005finput_005f21.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f21 = new int[] { 0 };
     try {
@@ -1742,15 +1741,15 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_005fselect_005f5 = (org.springframework.web.servlet.tags.form.SelectTag) _005fjspx_005ftagPool_005fform_005fselect_0026_005frequired_005fplaceholder_005fpath_005fid_005fclass.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_005fselect_005f5.setPageContext(_jspx_page_context);
     _jspx_th_form_005fselect_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(259,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(258,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f5.setPath("mediumOfExamination");
-    // /WEB-INF/view/student/add.jsp(259,7) null
+    // /WEB-INF/view/student/add.jsp(258,7) null
     _jspx_th_form_005fselect_005f5.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(259,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(258,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f5.setId("mediumOfExamination");
-    // /WEB-INF/view/student/add.jsp(259,7) null
+    // /WEB-INF/view/student/add.jsp(258,7) null
     _jspx_th_form_005fselect_005f5.setDynamicAttribute(null, "placeholder", new String("Enter mediumOfExamination"));
-    // /WEB-INF/view/student/add.jsp(259,7) null
+    // /WEB-INF/view/student/add.jsp(258,7) null
     _jspx_th_form_005fselect_005f5.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005fselect_005f5 = new int[] { 0 };
     try {
@@ -1791,9 +1790,9 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f5 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f5.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f5);
-    // /WEB-INF/view/student/add.jsp(263,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(262,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f5.setVar("medium_of_examination");
-    // /WEB-INF/view/student/add.jsp(263,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(262,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f5.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${medium_of_examinations}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f5 = new int[] { 0 };
     try {
@@ -1835,17 +1834,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f22 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f22.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f22.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(272,7) null
+    // /WEB-INF/view/student/add.jsp(271,7) null
     _jspx_th_form_005finput_005f22.setDynamicAttribute(null, "type", new String("text"));
-    // /WEB-INF/view/student/add.jsp(272,7) null
+    // /WEB-INF/view/student/add.jsp(271,7) null
     _jspx_th_form_005finput_005f22.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(272,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(271,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f22.setPath("enrollmentNumber");
-    // /WEB-INF/view/student/add.jsp(272,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(271,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f22.setId("enrollmentNumber");
-    // /WEB-INF/view/student/add.jsp(272,7) null
+    // /WEB-INF/view/student/add.jsp(271,7) null
     _jspx_th_form_005finput_005f22.setDynamicAttribute(null, "placeholder", new String("Enter Enrollment Number"));
-    // /WEB-INF/view/student/add.jsp(272,7) null
+    // /WEB-INF/view/student/add.jsp(271,7) null
     _jspx_th_form_005finput_005f22.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f22 = new int[] { 0 };
     try {
@@ -1872,17 +1871,17 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f23 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005frequired_005fplaceholder_005fpath_005fid_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f23.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f23.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(279,7) null
+    // /WEB-INF/view/student/add.jsp(278,7) null
     _jspx_th_form_005finput_005f23.setDynamicAttribute(null, "type", new String("number"));
-    // /WEB-INF/view/student/add.jsp(279,7) null
+    // /WEB-INF/view/student/add.jsp(278,7) null
     _jspx_th_form_005finput_005f23.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(279,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(278,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f23.setPath("studentId");
-    // /WEB-INF/view/student/add.jsp(279,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(278,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f23.setId("studentId");
-    // /WEB-INF/view/student/add.jsp(279,7) null
+    // /WEB-INF/view/student/add.jsp(278,7) null
     _jspx_th_form_005finput_005f23.setDynamicAttribute(null, "placeholder", new String("Enter student Id"));
-    // /WEB-INF/view/student/add.jsp(279,7) null
+    // /WEB-INF/view/student/add.jsp(278,7) null
     _jspx_th_form_005finput_005f23.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005finput_005f23 = new int[] { 0 };
     try {
@@ -1909,15 +1908,15 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_005fselect_005f6 = (org.springframework.web.servlet.tags.form.SelectTag) _005fjspx_005ftagPool_005fform_005fselect_0026_005frequired_005fplaceholder_005fpath_005fid_005fclass.get(org.springframework.web.servlet.tags.form.SelectTag.class);
     _jspx_th_form_005fselect_005f6.setPageContext(_jspx_page_context);
     _jspx_th_form_005fselect_005f6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/view/student/add.jsp(286,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(285,7) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f6.setPath("quotaFlag");
-    // /WEB-INF/view/student/add.jsp(286,7) null
+    // /WEB-INF/view/student/add.jsp(285,7) null
     _jspx_th_form_005fselect_005f6.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/view/student/add.jsp(286,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(285,7) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fselect_005f6.setId("quotaFlag");
-    // /WEB-INF/view/student/add.jsp(286,7) null
+    // /WEB-INF/view/student/add.jsp(285,7) null
     _jspx_th_form_005fselect_005f6.setDynamicAttribute(null, "placeholder", new String("Enter quota"));
-    // /WEB-INF/view/student/add.jsp(286,7) null
+    // /WEB-INF/view/student/add.jsp(285,7) null
     _jspx_th_form_005fselect_005f6.setDynamicAttribute(null, "required", new String("required"));
     int[] _jspx_push_body_count_form_005fselect_005f6 = new int[] { 0 };
     try {
@@ -1958,9 +1957,9 @@ public final class add_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f6 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f6.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f6);
-    // /WEB-INF/view/student/add.jsp(289,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(288,8) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f6.setVar("flag");
-    // /WEB-INF/view/student/add.jsp(289,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/student/add.jsp(288,8) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f6.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${flags}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f6 = new int[] { 0 };
     try {

@@ -36,9 +36,9 @@
 							<tr>
 								<th scope="row">Photo</th>
 								<td><img
-									src="${pageContext.request.contextPath}/resources/profile_images/${student.id}.jpg"
+									src="${pageContext.request.contextPath}/resources/student_images/${student.id}_photo.jpg"
 									height="100" width="100" /></td>
-									
+
 							</tr>
 
 							<tr>
@@ -221,8 +221,8 @@
 					<a href="adminHome" class="btn btn-info" role="button">Back</a> <a
 						href="student?id=${student.id}&edit" class="btn btn-info"
 						role="button">Edit Student</a> <a
-						href="rustigatedDetails?id=${student.id}&edit"
-						class="btn btn-info" role="button">Proceed</a>
+						href="examForm?id=${student.id}&edit" class="btn btn-info"
+						role="button">Proceed</a>
 
 				</div>
 				<div class="col-md-2"></div>

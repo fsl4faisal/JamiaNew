@@ -95,11 +95,11 @@ public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t<td><img\r\n");
       out.write("\t\t\t\t\t\t\t\t\tsrc=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("/resources/profile_images/");
+      out.write("/resources/student_images/");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${student.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write(".jpg\"\r\n");
+      out.write("_photo.jpg\"\r\n");
       out.write("\t\t\t\t\t\t\t\t\theight=\"100\" width=\"100\" /></td>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t\r\n");
+      out.write("\r\n");
       out.write("\t\t\t\t\t\t\t</tr>\r\n");
       out.write("\r\n");
       out.write("\t\t\t\t\t\t\t<tr>\r\n");
@@ -344,10 +344,10 @@ public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${student.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("&edit\" class=\"btn btn-info\"\r\n");
       out.write("\t\t\t\t\t\trole=\"button\">Edit Student</a> <a\r\n");
-      out.write("\t\t\t\t\t\thref=\"rustigatedDetails?id=");
+      out.write("\t\t\t\t\t\thref=\"examForm?id=");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${student.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("&edit\"\r\n");
-      out.write("\t\t\t\t\t\tclass=\"btn btn-info\" role=\"button\">Proceed</a>\r\n");
+      out.write("&edit\" class=\"btn btn-info\"\r\n");
+      out.write("\t\t\t\t\t\trole=\"button\">Proceed</a>\r\n");
       out.write("\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t<div class=\"col-md-2\"></div>\r\n");

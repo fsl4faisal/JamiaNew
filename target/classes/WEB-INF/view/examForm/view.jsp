@@ -33,10 +33,19 @@
 					<p>Below are the details from the database</p>
 					<table class="table table-bordered">
 						<tbody>
+
 							<tr>
 								<th scope="row">Photo</th>
 								<td><img
 									src="${pageContext.request.contextPath}/resources/student_images/${student.id}_photo.jpg"
+									height="100" width="100" /></td>
+
+							</tr>
+
+							<tr>
+								<th scope="row">Signature</th>
+								<td><img
+									src="${pageContext.request.contextPath}/resources/student_images/${student.id}_signature.jpg"
 									height="100" width="100" /></td>
 
 							</tr>
@@ -214,15 +223,63 @@
 								<td>${student.quotaFlag.name}</td>
 							</tr>
 
+							<tr>
+								<th scope="row">Were you ever rustigated/ expelled/
+									disqualified/ debarred from appearing at the examination?</th>
+								<td>${student.disqualifiedDescription.disqualifiedFlag.name}</td>
+							</tr>
 
 						</tbody>
 					</table>
+
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th colspan="4">Details for above point:</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Previous University/Board name</th>
+								<td>${student.disqualifiedDescription.previousUniversityBoardName}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Previous Examination Name</th>
+								<td>${student.disqualifiedDescription.previousExaminationName}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Previous Year</th>
+								<td>${student.disqualifiedDescription.previousYear}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Previous Enrollment Number</th>
+								<td>${student.disqualifiedDescription.previousEnrollmentNumber}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Previous Roll number</th>
+								<td>${student.disqualifiedDescription.previousRollNumber}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Period of punishment</th>
+								<td>${student.disqualifiedDescription.periodOfPunishment}</td>
+							</tr>
+
+						</tbody>
+
+					</table>
+
+
 
 					<a href="adminHome" class="btn btn-info" role="button">Back</a> <a
 						href="student?id=${student.id}&edit" class="btn btn-info"
 						role="button">Edit Student</a> <a
 						href="examForm?id=${student.id}&edit" class="btn btn-info"
-						role="button">Proceed</a>
+						role="button">Proceed To Exam Form</a>
 
 				</div>
 				<div class="col-md-2"></div>

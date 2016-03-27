@@ -68,13 +68,12 @@
 					<form:form action="student" method="post" role="form"
 						commandName="student" enctype="multipart/form-data">
 						<form:errors path="*" cssClass="errorblock" element="div" />
-						
+
 						<div class="form-group ">
-							<label for="year">Photo:</label>
-							<form:input type="file" class="form-control" path="studentPhoto"
+							<label for="photo">Photo:</label>
+							<form:input type="file" class="filestyle" path="studentPhoto"
 								id="studentPhoto" placeholder="Upload Photo" required="required" />
 						</div>
-						
 
 						<div class="form-group">
 							<label for="role">Role:</label>

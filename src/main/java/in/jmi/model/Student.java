@@ -13,6 +13,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -32,7 +33,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Entity
 @Table(name = "STUDENT")
 public class Student extends UrlEntity {
-	
+
 	@Transient
 	MultipartFile studentPhoto;
 
@@ -125,7 +126,7 @@ public class Student extends UrlEntity {
 	@Valid
 	private DisqualifiedDescription disqualifiedDescription;
 
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<Subject> subjectTaken;
 
 	@Column(name = "APPROVED_BY_HOD")
@@ -322,7 +323,6 @@ public class Student extends UrlEntity {
 	public void setStudentId(String studentId) {
 		this.studentId = studentId;
 	}
-	
 
 	public MultipartFile getStudentPhoto() {
 		return studentPhoto;
@@ -351,7 +351,5 @@ public class Student extends UrlEntity {
 				+ ", approveByHodFlag=" + approveByHodFlag + ", studentId="
 				+ studentId + "]";
 	}
-
-	
 
 }
