@@ -61,7 +61,7 @@
 				<div class="col-md-8">
 					<h2>Student ${student.user.name}</h2>
 					<form:form action="examForm" method="post" role="form"
-						commandName="student">
+						commandName="student" enctype="multipart/form-data">
 						<form:input type="hidden" path="id" value="${student.id}" />
 						<form:errors path="*" cssClass="errorblock" element="div" />
 						<p>Below are the details from the database</p>

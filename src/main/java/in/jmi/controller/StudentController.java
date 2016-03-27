@@ -243,7 +243,7 @@ public class StudentController {
 
 			updatedStudent.setDisqualifiedDescription(student
 					.getDisqualifiedDescription());
-			student = studentService.update(updatedStudent);
+			
 
 			// saving student first into the database because it would generate
 			// id for me and i would use the same id for saving the profile pic
@@ -260,7 +260,7 @@ public class StudentController {
 			// destination = new File(PROFILE_UPLOAD_LOCATION + student.getId()
 			// + "_signature" + ".jpg");
 			// ImageIO.write(signature, "jpg", destination);
-
+			student = studentService.update(updatedStudent);
 			return "redirect:examForm?id=" + updatedStudent.getId();
 
 		}
