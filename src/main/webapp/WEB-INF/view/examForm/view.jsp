@@ -272,6 +272,59 @@
 						</tbody>
 
 					</table>
+					
+					
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th colspan="4">Subject Selected:</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Qualifying Papers</th>
+								<td>${student.disqualifiedDescription.previousUniversityBoardName}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Compulsary Papers</th>
+								<td>${student.disqualifiedDescription.previousExaminationName}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Core Course(Hons)</th>
+								<td>${student.disqualifiedDescription.previousYear}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Core Couse(Subsidiary)</th>
+								<td>${student.disqualifiedDescription.previousEnrollmentNumber}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Choice Based Course (Elective)</th>
+								<td>${student.disqualifiedDescription.previousRollNumber}</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Skill Enhancement Course (SEC)</th>
+								<td>${student.disqualifiedDescription.periodOfPunishment}</td>
+							</tr>
+							
+							<tr>
+								<th scope="row">Ability Skill Enhancement(AECC)</th>
+								<td>${student.disqualifiedDescription.periodOfPunishment}</td>
+							</tr>
+							
+							<tr>
+								<th scope="row">Audit Course</th>
+								<td>${student.disqualifiedDescription.periodOfPunishment}</td>
+							</tr>
+
+						</tbody>
+
+					</table>
+					
 
 
 

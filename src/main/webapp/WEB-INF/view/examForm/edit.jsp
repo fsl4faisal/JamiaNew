@@ -286,11 +286,12 @@
 							<label for="photo">Photo:</label>
 							<form:input type="file" class="filestyle" path="studentPhoto"
 								id="studentPhoto" placeholder="Upload Photo" required="required" />
-								
+
 							<label for="singnature">Signature:</label>
 							<form:input type="file" class="filestyle" path="studentSignature"
-								id="studentSignature" placeholder="Upload Signature" required="required" />
-							
+								id="studentSignature" placeholder="Upload Signature"
+								required="required" />
+
 
 
 							<label for="disqualifiedFlag">Were you ever rustigated/
@@ -344,6 +345,75 @@
 								path="disqualifiedDescription.periodOfPunishment"
 								id="disqualifiedDescription.periodOfPunishment"
 								placeholder="Enter Period Of Punishment" required="required" />
+						</div>
+
+						<div class="form-group ">
+							<p align="left">
+								<strong>Subjects/Papers in which you wishes to be
+									examined(Select option of papers, if any):</strong>
+							</p>
+							<p align="left">
+								<strong>Qualifying Papers:</strong>
+								<form:select type="text" class="form-control"
+									path="subjects[0]" id="subjects"
+									placeholder="Select Qualifying Paper" required="required">
+									<option disabled selected></option>
+									<c:forEach var="qualifyingSubject" items="${qualifyingSubjects}">
+										<option value="${qualifyingSubject}">${qualifyingSubject.paperName}</option>
+										
+									</c:forEach>
+								</form:select>
+							</p>
+
+<!-- 							<p align="left"> -->
+<!-- 								<strong>Compulsary Papers:</strong> -->
+<%-- 								<form:input type="text" class="form-control" --%>
+<%-- 									path="subjects[1].paperName" id="subjects" --%>
+<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
+<!-- 							</p> -->
+
+<!-- 							<p align="left"> -->
+<!-- 								<strong>Core Course(Hons):</strong> -->
+<%-- 								<form:input type="text" class="form-control" --%>
+<%-- 									path="subjects[2].paperName" id="subjects" --%>
+<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
+<!-- 							</p> -->
+
+<!-- 							<p align="left"> -->
+<!-- 								<strong>Core Couse(Subsidiary):</strong> -->
+<%-- 								<form:input type="text" class="form-control" --%>
+<%-- 									path="subjects[3].paperName" id="subjects" --%>
+<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
+<!-- 							</p> -->
+
+<!-- 							<p align="left"> -->
+<!-- 								<strong>Choice Based Course (Elective):</strong> -->
+<%-- 								<form:input type="text" class="form-control" --%>
+<%-- 									path="subjects[4].paperName" id="subjects" --%>
+<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
+<!-- 							</p> -->
+
+<!-- 							<p align="left"> -->
+<!-- 								<strong>Skill Enhancement Course(SEC):</strong> -->
+<%-- 								<form:input type="text" class="form-control" --%>
+<%-- 									path="subjects[5].paperName" id="subjects" --%>
+<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
+<!-- 							</p> -->
+
+<!-- 							<p align="left"> -->
+<!-- 								<strong>Ability Skill Enhancement(AECC):</strong> -->
+<%-- 								<form:input type="text" class="form-control" --%>
+<%-- 									path="subjects[6].paperName" id="subjects" --%>
+<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
+<!-- 							</p> -->
+
+<!-- 							<p align="left"> -->
+<!-- 								<strong>Audit Course:</strong> -->
+<%-- 								<form:input type="text" class="form-control" --%>
+<%-- 									path="subjects[7].paperName" id="subjects" --%>
+<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
+<!-- 							</p> -->
+
 						</div>
 						<button type="submit" value="Submit" name="edit"
 							class="btn btn-info active">Submit</button>

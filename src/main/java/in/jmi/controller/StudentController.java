@@ -8,7 +8,9 @@ import in.jmi.constants.MediumOfExamination;
 import in.jmi.constants.Role;
 import in.jmi.constants.Semester;
 import in.jmi.model.Student;
+import in.jmi.model.Subject;
 import in.jmi.service.StudentService;
+import in.jmi.service.SubjectService;
 import in.jmi.util.PhotoValidator;
 
 import java.awt.image.BufferedImage;
@@ -40,6 +42,9 @@ public class StudentController {
 
 	@Autowired
 	private StudentService studentService;
+	
+	@Autowired
+	private SubjectService subjectService;
 
 	@Autowired
 	PhotoValidator photoValidator;
@@ -221,6 +226,7 @@ public class StudentController {
 
 		model.addAttribute("student", studentService.findOne(id));
 		model.addAttribute("flags", Flag.values());
+		model.addAttribute("qualifyingSubjects", subjectService.findAll());
 
 		return "examForm/edit";
 	}
@@ -243,8 +249,12 @@ public class StudentController {
 
 			updatedStudent.setDisqualifiedDescription(student
 					.getDisqualifiedDescription());
-			
-
+			updatedStudent.setSubjects(student.getSubjects());
+			for(Subject subject:student.getSubjects()){
+				System.out.println("Subject is:"+subject);
+			}
+		
+			//System.out.println("student subject:"+student.getSubjects());
 			// saving student first into the database because it would generate
 			// id for me and i would use the same id for saving the profile pic
 

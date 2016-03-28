@@ -7,8 +7,9 @@ import in.jmi.constants.Gender;
 import in.jmi.constants.MediumOfExamination;
 import in.jmi.constants.Semester;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -132,7 +133,7 @@ public class Student extends UrlEntity {
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "STUDENT_SUBJECT", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = { @JoinColumn(name = "SUBJECT_ID") })
-	private Set<Subject> subjects;
+	private List<Subject> subjects=new ArrayList<Subject>();
 
 	@Column(name = "APPROVED_BY_HOD")
 	private Flag approveByHodFlag;
@@ -297,11 +298,11 @@ public class Student extends UrlEntity {
 		this.disqualifiedDescription = disqualifiedDescription;
 	}
 
-	public Set<Subject> getSubjects() {
+	public List<Subject> getSubjects() {
 		return subjects;
 	}
 
-	public void setSubjects(Set<Subject> subjects) {
+	public void setSubjects(List<Subject> subjects) {
 		this.subjects = subjects;
 	}
 
