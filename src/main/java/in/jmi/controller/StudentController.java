@@ -108,15 +108,15 @@ public class StudentController {
 			System.out.println(student);
 			student = studentService.save(student);
 
-			String PROFILE_UPLOAD_LOCATION = servletContext.getRealPath("/")
-					+ File.separator + "resources" + File.separator
-					+ "student_images" + File.separator;
-
-			BufferedImage photo = ImageIO.read(new ByteArrayInputStream(student
-					.getStudentPhoto().getBytes()));
-			File destination = new File(PROFILE_UPLOAD_LOCATION
-					+ student.getId() + "_photo" + ".jpg");
-			ImageIO.write(photo, "jpg", destination);
+//			String PROFILE_UPLOAD_LOCATION = servletContext.getRealPath("/")
+//					+ File.separator + "resources" + File.separator
+//					+ "student_images" + File.separator;
+//
+//			BufferedImage photo = ImageIO.read(new ByteArrayInputStream(student
+//					.getStudentPhoto().getBytes()));
+//			File destination = new File(PROFILE_UPLOAD_LOCATION
+//					+ student.getId() + "_photo" + ".jpg");
+//			ImageIO.write(photo, "jpg", destination);
 
 			return "redirect:student?id=" + student.getId();
 
@@ -254,12 +254,12 @@ public class StudentController {
 					+ student.getId() + "_photo" + ".jpg");
 			ImageIO.write(photo, "jpg", destination);
 
-			// BufferedImage signature = ImageIO.read(new
-			// ByteArrayInputStream(student
-			// .getStudentSignature().getBytes()));
-			// destination = new File(PROFILE_UPLOAD_LOCATION + student.getId()
-			// + "_signature" + ".jpg");
-			// ImageIO.write(signature, "jpg", destination);
+			 BufferedImage signature = ImageIO.read(new
+			 ByteArrayInputStream(student
+			 .getStudentSignature().getBytes()));
+			 destination = new File(PROFILE_UPLOAD_LOCATION + student.getId()
+			 + "_signature" + ".jpg");
+			 ImageIO.write(signature, "jpg", destination);
 			student = studentService.update(updatedStudent);
 			return "redirect:examForm?id=" + updatedStudent.getId();
 

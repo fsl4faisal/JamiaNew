@@ -1,11 +1,15 @@
 package in.jmi.model;
 
+import java.util.Set;
+
 import in.jmi.constants.DepartmentName;
 import in.jmi.constants.PaperCategory;
 import in.jmi.constants.Semester;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -35,7 +39,10 @@ public class Subject extends BaseEntity {
 	@Column(name = "DEPARTMENT_NAME",nullable = false)
 	@NotNull(message="Department Name: Department Name can not be left blank")
 	private DepartmentName departmentName;
-
+	
+	@ManyToMany(mappedBy="subjects",cascade=CascadeType.ALL)
+	private Set<Student> students;
+	
 	public Subject() {
 	}
 

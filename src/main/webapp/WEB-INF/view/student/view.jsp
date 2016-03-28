@@ -33,13 +33,7 @@
 					<p>Below are the details from the database</p>
 					<table class="table table-bordered">
 						<tbody>
-							<tr>
-								<th scope="row">Photo</th>
-								<td><img
-									src="${pageContext.request.contextPath}/resources/student_images/${student.id}_photo.jpg"
-									height="100" width="100" /></td>
 
-							</tr>
 
 							<tr>
 								<th scope="row">Role</th>

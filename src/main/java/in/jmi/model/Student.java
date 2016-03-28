@@ -15,7 +15,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -36,6 +37,9 @@ public class Student extends UrlEntity {
 
 	@Transient
 	MultipartFile studentPhoto;
+
+	@Transient
+	MultipartFile studentSignature;
 
 	@Column(name = "COURSE_TYPE", nullable = false)
 	@NotNull(message = "Course Type: Course Type can not be left blank")
@@ -126,8 +130,9 @@ public class Student extends UrlEntity {
 	@Valid
 	private DisqualifiedDescription disqualifiedDescription;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Set<Subject> subjectTaken;
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinTable(name = "STUDENT_SUBJECT", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = { @JoinColumn(name = "SUBJECT_ID") })
+	private Set<Subject> subjects;
 
 	@Column(name = "APPROVED_BY_HOD")
 	private Flag approveByHodFlag;
@@ -292,12 +297,12 @@ public class Student extends UrlEntity {
 		this.disqualifiedDescription = disqualifiedDescription;
 	}
 
-	public Set<Subject> getSubjectTaken() {
-		return subjectTaken;
+	public Set<Subject> getSubjects() {
+		return subjects;
 	}
 
-	public void setSubjectTaken(Set<Subject> subjectTaken) {
-		this.subjectTaken = subjectTaken;
+	public void setSubjects(Set<Subject> subjects) {
+		this.subjects = subjects;
 	}
 
 	public Flag getApproveByHodFlag() {
@@ -332,22 +337,31 @@ public class Student extends UrlEntity {
 		this.studentPhoto = studentPhoto;
 	}
 
+	public MultipartFile getStudentSignature() {
+		return studentSignature;
+	}
+
+	public void setStudentSignature(MultipartFile studentSignature) {
+		this.studentSignature = studentSignature;
+	}
+
 	@Override
 	public String toString() {
-		return "Student [studentPhoto=" + studentPhoto + ", courseType="
-				+ courseType + ", user=" + user + ", examinationName="
-				+ examinationName + ", semesterName=" + semesterName
-				+ ", year=" + year + ", dateOfBirth=" + dateOfBirth
-				+ ", placeOfBirth=" + placeOfBirth + ", nationality="
-				+ nationality + ", religion=" + religion + ", gender=" + gender
-				+ ", fatherName=" + fatherName + ", motherName=" + motherName
-				+ ", spouseName=" + spouseName + ", correspondenceAddress="
+		return "Student [studentPhoto=" + studentPhoto + ", studentSignature="
+				+ studentSignature + ", courseType=" + courseType + ", user="
+				+ user + ", examinationName=" + examinationName
+				+ ", semesterName=" + semesterName + ", year=" + year
+				+ ", dateOfBirth=" + dateOfBirth + ", placeOfBirth="
+				+ placeOfBirth + ", nationality=" + nationality + ", religion="
+				+ religion + ", gender=" + gender + ", fatherName="
+				+ fatherName + ", motherName=" + motherName + ", spouseName="
+				+ spouseName + ", correspondenceAddress="
 				+ correspondenceAddress + ", permanentAddress="
 				+ permanentAddress + ", mobileNumber=" + mobileNumber
 				+ ", mediumOfExamination=" + mediumOfExamination
 				+ ", enrollmentNumber=" + enrollmentNumber + ", quotaFlag="
 				+ quotaFlag + ", disqualifiedDescription="
-				+ disqualifiedDescription + ", subjectTaken=" + subjectTaken
+				+ disqualifiedDescription + ", subjects=" + subjects
 				+ ", approveByHodFlag=" + approveByHodFlag + ", studentId="
 				+ studentId + "]";
 	}

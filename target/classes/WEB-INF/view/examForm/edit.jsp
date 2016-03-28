@@ -282,12 +282,16 @@
 
 						<div class="form-group">
 
-							<div class="form-group ">
-								<label for="photo">Photo:</label>
-								<form:input type="file" class="filestyle" path="studentPhoto"
-									id="studentPhoto" placeholder="Upload Photo"
-									required="required" />
-							</div>
+
+							<label for="photo">Photo:</label>
+							<form:input type="file" class="filestyle" path="studentPhoto"
+								id="studentPhoto" placeholder="Upload Photo" required="required" />
+								
+							<label for="singnature">Signature:</label>
+							<form:input type="file" class="filestyle" path="studentSignature"
+								id="studentSignature" placeholder="Upload Signature" required="required" />
+							
+
 
 							<label for="disqualifiedFlag">Were you ever rustigated/
 								expelled/ disqualified/ debarred from appearing at the

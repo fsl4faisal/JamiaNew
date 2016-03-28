@@ -10,7 +10,7 @@
 		<property name="connection.pool_size">1</property>
 
 		<!-- re-create the database every time -->
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 
 		<mapping class="in.jmi.model.User" />
 		<mapping class="in.jmi.model.Subject" />

@@ -69,12 +69,6 @@
 						commandName="student" enctype="multipart/form-data">
 						<form:errors path="*" cssClass="errorblock" element="div" />
 
-						<div class="form-group ">
-							<label for="photo">Photo:</label>
-							<form:input type="file" class="filestyle" path="studentPhoto"
-								id="studentPhoto" placeholder="Upload Photo" required="required" />
-						</div>
-
 						<div class="form-group">
 							<label for="role">Role:</label>
 							<form:select path="user.role" class="form-control" id="role"
