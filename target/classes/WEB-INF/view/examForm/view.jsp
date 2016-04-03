@@ -37,7 +37,7 @@
 							<tr>
 								<th scope="row">Photo</th>
 								<td><img
-									src="${pageContext.request.contextPath}/resources/student_images/${student.id}_photo.jpg"
+									src="${pageContext.request.contextPath}/viewphoto/${student.id}"
 									height="100" width="100" /></td>
 
 							</tr>
@@ -45,7 +45,7 @@
 							<tr>
 								<th scope="row">Signature</th>
 								<td><img
-									src="${pageContext.request.contextPath}/resources/student_images/${student.id}_signature.jpg"
+									src="${pageContext.request.contextPath}/viewsignature/${student.id}"
 									height="100" width="100" /></td>
 
 							</tr>
@@ -272,8 +272,8 @@
 						</tbody>
 
 					</table>
-					
-					
+
+
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -281,51 +281,17 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th>Qualifying Papers</th>
-								<td>${student.disqualifiedDescription.previousUniversityBoardName}</td>
-							</tr>
 
-							<tr>
-								<th scope="row">Compulsary Papers</th>
-								<td>${student.disqualifiedDescription.previousExaminationName}</td>
-							</tr>
-
-							<tr>
-								<th scope="row">Core Course(Hons)</th>
-								<td>${student.disqualifiedDescription.previousYear}</td>
-							</tr>
-
-							<tr>
-								<th scope="row">Core Couse(Subsidiary)</th>
-								<td>${student.disqualifiedDescription.previousEnrollmentNumber}</td>
-							</tr>
-
-							<tr>
-								<th scope="row">Choice Based Course (Elective)</th>
-								<td>${student.disqualifiedDescription.previousRollNumber}</td>
-							</tr>
-
-							<tr>
-								<th scope="row">Skill Enhancement Course (SEC)</th>
-								<td>${student.disqualifiedDescription.periodOfPunishment}</td>
-							</tr>
-							
-							<tr>
-								<th scope="row">Ability Skill Enhancement(AECC)</th>
-								<td>${student.disqualifiedDescription.periodOfPunishment}</td>
-							</tr>
-							
-							<tr>
-								<th scope="row">Audit Course</th>
-								<td>${student.disqualifiedDescription.periodOfPunishment}</td>
-							</tr>
+							<c:forEach var="subject" items="${student.subjects}">
+								<tr>
+									<th>${subject.paperCategory.name}</th>
+									<td>${subject.paperName}</td>
+								</tr>
+							</c:forEach>
 
 						</tbody>
 
 					</table>
-					
-
 
 
 					<a href="adminHome" class="btn btn-info" role="button">Back</a> <a

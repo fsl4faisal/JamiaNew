@@ -4,14 +4,10 @@ import in.jmi.constants.DepartmentName;
 import in.jmi.constants.PaperCategory;
 import in.jmi.constants.Semester;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -32,18 +28,18 @@ public class Subject extends BaseEntity {
 
 	@Column(name = "PAPER_CATEGORY",nullable = false)
 	@NotNull(message="Paper Category: Paper Category can not be left blank")
+	@Enumerated(EnumType.STRING)
 	private PaperCategory paperCategory;
 
 	@Column(name = "PAPER_SEMESTER",nullable = false)
 	@NotNull(message="Paper Semster: Paper Semster can not be left blank")
+	@Enumerated(EnumType.STRING)
 	private Semester paperSemester;
 	
 	@Column(name = "DEPARTMENT_NAME",nullable = false)
 	@NotNull(message="Department Name: Department Name can not be left blank")
+	@Enumerated(EnumType.STRING)
 	private DepartmentName departmentName;
-	
-	@ManyToMany(mappedBy="subjects",cascade=CascadeType.ALL,fetch = FetchType.EAGER)
-	private List<Student> students=new ArrayList<Student>();
 	
 	public Subject() {
 	}
@@ -88,20 +84,13 @@ public class Subject extends BaseEntity {
 		this.departmentName = departmentName;
 	}
 
-	public List<Student> getStudents() {
-		return students;
-	}
-
-	public void setStudents(List<Student> students) {
-		this.students = students;
-	}
 
 	@Override
 	public String toString() {
 		return "Subject [" + paperNumber + ","
 				+ paperName + "," + paperCategory
 				+ "," + paperSemester + ","
-				+ departmentName + "," + students + "]";
+				+ departmentName + "," +  "]";
 	}
 
 	

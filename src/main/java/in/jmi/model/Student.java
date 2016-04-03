@@ -1,12 +1,6 @@
 package in.jmi.model;
 
-import in.jmi.constants.CourseType;
-import in.jmi.constants.ExaminationName;
-import in.jmi.constants.Flag;
-import in.jmi.constants.Gender;
-import in.jmi.constants.MediumOfExamination;
-import in.jmi.constants.Semester;
-
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,15 +8,17 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -30,21 +26,42 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.multipart.MultipartFile;
+
+import in.jmi.constants.CourseType;
+import in.jmi.constants.ExaminationName;
+import in.jmi.constants.Flag;
+import in.jmi.constants.Gender;
+import in.jmi.constants.MediumOfExamination;
+import in.jmi.constants.Semester;
 
 @Entity
 @Table(name = "STUDENT")
 public class Student extends UrlEntity {
 
-	@Transient
-	MultipartFile studentPhoto;
+	@Column(name = "PHOTO_FILENAME")
+	private String photoFilename;
 
-	@Transient
-	MultipartFile studentSignature;
+	@Column(name = "PHOTO_CONTENT", columnDefinition = "mediumblob")
+	@Lob
+	private Blob photoContent;
+
+	@Column(name = "PHOTO_CONTENT_TYPE")
+	private String photoContentType;
+
+	@Column(name = "SIGNATURE_FILENAME")
+	private String signatureFilename;
+
+	@Column(name = "SIGNATURE_CONTENT", columnDefinition = "mediumblob")
+	@Lob
+	private Blob signatureContent;
+
+	@Column(name = "SIGNATURE_CONTENT_TYPE")
+	private String signatureContentType;
 
 	@Column(name = "COURSE_TYPE", nullable = false)
 	@NotNull(message = "Course Type: Course Type can not be left blank")
-	private in.jmi.constants.CourseType courseType;
+	@Enumerated(EnumType.STRING)
+	private CourseType courseType;
 
 	@OneToOne(cascade = CascadeType.ALL, optional = false)
 	@JoinColumn(name = "STUDENT_USER")
@@ -53,10 +70,12 @@ public class Student extends UrlEntity {
 
 	@Column(name = "EXAMINATION_NAME", nullable = false)
 	@NotNull(message = "Examination: Examination Name can not be left blank")
+	@Enumerated(EnumType.STRING)
 	private ExaminationName examinationName;
 
 	@Column(name = "SEMESTER_NAME", nullable = false)
 	@NotNull(message = "Part/Semester: Semester Name can not be left blank")
+	@Enumerated(EnumType.STRING)
 	private Semester semesterName;
 
 	@Column(name = "YEAR", nullable = false)
@@ -86,6 +105,7 @@ public class Student extends UrlEntity {
 
 	@Column(name = "GENDER", nullable = false)
 	@NotNull(message = "Gender: Gender can not be left blank")
+	@Enumerated(EnumType.STRING)
 	private Gender gender;
 
 	@Column(name = "FATHER_NAME", nullable = false)
@@ -116,6 +136,7 @@ public class Student extends UrlEntity {
 
 	@Column(name = "MEDIUM_OF_EXAMINATION", nullable = false)
 	@NotNull(message = "Medium of Examination: Medium of examination can not be left blank")
+	@Enumerated(EnumType.STRING)
 	private MediumOfExamination mediumOfExamination;
 
 	@NotEmpty(message = "Enrollment Number: Enrollment Number can not be empty")
@@ -124,6 +145,7 @@ public class Student extends UrlEntity {
 
 	@Column(name = "QUOTA_FLAG", nullable = false)
 	@NotNull(message = "Belong to S.C/S.T/O.B.C: Field can not be left blank")
+	@Enumerated(EnumType.STRING)
 	private Flag quotaFlag;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -132,11 +154,17 @@ public class Student extends UrlEntity {
 	private DisqualifiedDescription disqualifiedDescription;
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name = "STUDENT_SUBJECT", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = { @JoinColumn(name = "SUBJECT_ID") })
-	private List<Subject> subjects=new ArrayList<Subject>();
+	@JoinTable(name = "STUDENT_SUBJECT", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = {
+			@JoinColumn(name = "SUBJECT_ID") })
+	private List<Subject> subjects = new ArrayList<Subject>();
 
 	@Column(name = "APPROVED_BY_HOD")
+	@Enumerated(EnumType.STRING)
 	private Flag approveByHodFlag;
+
+	@Column(name = "SUBMITTED_BY_STUDENT")
+	@Enumerated(EnumType.STRING)
+	private Flag submittedByStudent;
 
 	@Column(name = "STUDENT_ID", nullable = false)
 	@Pattern(regexp = "[\\d]{6}", message = "Student Id: Student id can be 6 digits number only")
@@ -293,8 +321,7 @@ public class Student extends UrlEntity {
 		return disqualifiedDescription;
 	}
 
-	public void setDisqualifiedDescription(
-			DisqualifiedDescription disqualifiedDescription) {
+	public void setDisqualifiedDescription(DisqualifiedDescription disqualifiedDescription) {
 		this.disqualifiedDescription = disqualifiedDescription;
 	}
 
@@ -330,41 +357,62 @@ public class Student extends UrlEntity {
 		this.studentId = studentId;
 	}
 
-	public MultipartFile getStudentPhoto() {
-		return studentPhoto;
+	public Flag getSubmittedByStudent() {
+		return submittedByStudent;
 	}
 
-	public void setStudentPhoto(MultipartFile studentPhoto) {
-		this.studentPhoto = studentPhoto;
+	public void setSubmittedByStudent(Flag submittedByStudent) {
+		this.submittedByStudent = submittedByStudent;
 	}
 
-	public MultipartFile getStudentSignature() {
-		return studentSignature;
+	public String getPhotoFilename() {
+		return photoFilename;
 	}
 
-	public void setStudentSignature(MultipartFile studentSignature) {
-		this.studentSignature = studentSignature;
+	public void setPhotoFilename(String photoFilename) {
+		this.photoFilename = photoFilename;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [studentPhoto=" + studentPhoto + ", studentSignature="
-				+ studentSignature + ", courseType=" + courseType + ", user="
-				+ user + ", examinationName=" + examinationName
-				+ ", semesterName=" + semesterName + ", year=" + year
-				+ ", dateOfBirth=" + dateOfBirth + ", placeOfBirth="
-				+ placeOfBirth + ", nationality=" + nationality + ", religion="
-				+ religion + ", gender=" + gender + ", fatherName="
-				+ fatherName + ", motherName=" + motherName + ", spouseName="
-				+ spouseName + ", correspondenceAddress="
-				+ correspondenceAddress + ", permanentAddress="
-				+ permanentAddress + ", mobileNumber=" + mobileNumber
-				+ ", mediumOfExamination=" + mediumOfExamination
-				+ ", enrollmentNumber=" + enrollmentNumber + ", quotaFlag="
-				+ quotaFlag + ", disqualifiedDescription="
-				+ disqualifiedDescription + ", subjects=" + subjects
-				+ ", approveByHodFlag=" + approveByHodFlag + ", studentId="
-				+ studentId + "]";
+	public Blob getPhotoContent() {
+		return photoContent;
 	}
+
+	public void setPhotoContent(Blob photoContent) {
+		this.photoContent = photoContent;
+	}
+
+	public String getPhotoContentType() {
+		return photoContentType;
+	}
+
+	public void setPhotoContentType(String photoContentType) {
+		this.photoContentType = photoContentType;
+	}
+
+	public String getSignatureFilename() {
+		return signatureFilename;
+	}
+
+	public void setSignatureFilename(String signatureFilename) {
+		this.signatureFilename = signatureFilename;
+	}
+
+	public Blob getSignatureContent() {
+		return signatureContent;
+	}
+
+	public void setSignatureContent(Blob signatureContent) {
+		this.signatureContent = signatureContent;
+	}
+
+	public String getSignatureContentType() {
+		return signatureContentType;
+	}
+
+	public void setSignatureContentType(String signatureContentType) {
+		this.signatureContentType = signatureContentType;
+	}
+	
+	
 
 }

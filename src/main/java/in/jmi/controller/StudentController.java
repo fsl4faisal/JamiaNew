@@ -8,21 +8,14 @@ import in.jmi.constants.MediumOfExamination;
 import in.jmi.constants.Role;
 import in.jmi.constants.Semester;
 import in.jmi.model.Student;
-import in.jmi.model.Subject;
 import in.jmi.service.StudentService;
 import in.jmi.service.SubjectService;
-import in.jmi.util.PhotoValidator;
 
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import javax.imageio.ImageIO;
-import javax.servlet.ServletContext;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,17 +35,13 @@ public class StudentController {
 
 	@Autowired
 	private StudentService studentService;
-	
+
 	@Autowired
 	private SubjectService subjectService;
 
-	@Autowired
-	PhotoValidator photoValidator;
-
-	@Autowired
-	ServletContext servletContext;
-
 	/*
+	 * @Autowired PhotoValidator photoValidator;
+	 * 
 	 * 
 	 * Student CRUD
 	 */
@@ -113,15 +102,16 @@ public class StudentController {
 			System.out.println(student);
 			student = studentService.save(student);
 
-//			String PROFILE_UPLOAD_LOCATION = servletContext.getRealPath("/")
-//					+ File.separator + "resources" + File.separator
-//					+ "student_images" + File.separator;
-//
-//			BufferedImage photo = ImageIO.read(new ByteArrayInputStream(student
-//					.getStudentPhoto().getBytes()));
-//			File destination = new File(PROFILE_UPLOAD_LOCATION
-//					+ student.getId() + "_photo" + ".jpg");
-//			ImageIO.write(photo, "jpg", destination);
+			// String PROFILE_UPLOAD_LOCATION = servletContext.getRealPath("/")
+			// + File.separator + "resources" + File.separator
+			// + "student_images" + File.separator;
+			//
+			// BufferedImage photo = ImageIO.read(new
+			// ByteArrayInputStream(student
+			// .getStudentPhoto().getBytes()));
+			// File destination = new File(PROFILE_UPLOAD_LOCATION
+			// + student.getId() + "_photo" + ".jpg");
+			// ImageIO.write(photo, "jpg", destination);
 
 			return "redirect:student?id=" + student.getId();
 
@@ -213,74 +203,6 @@ public class StudentController {
 	public String postDeleteStudent(@RequestParam long id) {
 		studentService.delete(studentService.findOne(id));
 		return "redirect:adminHome";
-	}
-
-	/*
-	 * 
-	 * Student Rustigated and exam form including photo and signature upload
-	 * CRUD
-	 */
-
-	@RequestMapping(value = "/examForm", params = "edit", method = RequestMethod.GET)
-	public String getEditExamForm(@RequestParam("id") long id, Model model) {
-
-		model.addAttribute("student", studentService.findOne(id));
-		model.addAttribute("flags", Flag.values());
-		model.addAttribute("qualifyingSubjects", subjectService.findAll());
-
-		return "examForm/edit";
-	}
-
-	@RequestMapping(value = "/examForm", params = "edit", method = RequestMethod.POST)
-	public String postEditExamForm(@ModelAttribute @Valid Student student,
-			BindingResult result, Model model) throws IOException {
-
-		String PROFILE_UPLOAD_LOCATION = servletContext.getRealPath("/")
-				+ File.separator + "resources" + File.separator
-				+ "student_images" + File.separator;
-
-		if (result.hasErrors()) {
-			model.addAttribute("flags", Flag.values());
-			return "examForm/edit";
-
-		} else {
-
-			Student updatedStudent = studentService.findOne(student.getId());
-
-			updatedStudent.setDisqualifiedDescription(student
-					.getDisqualifiedDescription());
-			updatedStudent.setSubjects(student.getSubjects());
-			for(Subject subject:student.getSubjects()){
-				System.out.println("Subject is:"+subject);
-			}
-		
-			//System.out.println("student subject:"+student.getSubjects());
-			// saving student first into the database because it would generate
-			// id for me and i would use the same id for saving the profile pic
-
-			BufferedImage photo = ImageIO.read(new ByteArrayInputStream(student
-					.getStudentPhoto().getBytes()));
-			File destination = new File(PROFILE_UPLOAD_LOCATION
-					+ student.getId() + "_photo" + ".jpg");
-			ImageIO.write(photo, "jpg", destination);
-
-			 BufferedImage signature = ImageIO.read(new
-			 ByteArrayInputStream(student
-			 .getStudentSignature().getBytes()));
-			 destination = new File(PROFILE_UPLOAD_LOCATION + student.getId()
-			 + "_signature" + ".jpg");
-			 ImageIO.write(signature, "jpg", destination);
-			student = studentService.update(updatedStudent);
-			return "redirect:examForm?id=" + updatedStudent.getId();
-
-		}
-
-	}
-
-	@RequestMapping(value = "/examForm", method = RequestMethod.GET)
-	public String getExamForm(@RequestParam("id") long id, Model model) {
-		model.addAttribute("student", studentService.findOne(id));
-		return "examForm/view";
 	}
 
 }

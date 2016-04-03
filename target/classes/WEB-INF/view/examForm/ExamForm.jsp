@@ -52,12 +52,9 @@
 <p>&nbsp;</p>
 <table width="967" border="1">
   <tr>
-    <th colspan="2" scope="col"><p>Choice Based Course</p>
-    <p>(Elective)</p></th>
-    <th colspan="2" scope="col"><p>Skill Enhancement Course</p>
-    <p>(SEC)</p></th>
-    <th colspan="2" scope="col"><p>Ability Skill Enhancement</p>
-    <p>(AECC)</p></th>
+    <th colspan="2" scope="col"><p>Choice Based Course (Elective)</p></th>
+    <th colspan="2" scope="col"><p>Skill Enhancement Course(SEC)</p></th>
+    <th colspan="2" scope="col"><p>Ability Skill Enhancement(AECC)</p></th>
     <th colspan="2" scope="col">Audit Course</th>
   </tr>
   <tr>

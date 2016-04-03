@@ -63,6 +63,7 @@
 					<form:form action="examForm" method="post" role="form"
 						commandName="student" enctype="multipart/form-data">
 						<form:input type="hidden" path="id" value="${student.id}" />
+						<form:input type="hidden" path="submittedByStudent" value="YES" />
 						<form:errors path="*" cssClass="errorblock" element="div" />
 						<p>Below are the details from the database</p>
 						<table class="table table-bordered">
@@ -283,20 +284,18 @@
 						<div class="form-group">
 
 
-							<label for="photo">Photo:</label>
-							<form:input type="file" class="filestyle" path="studentPhoto"
-								id="studentPhoto" placeholder="Upload Photo" required="required" />
+							<form:label path="photoContent" for="photo">Photo:</form:label>
+							<input type="file" class="filestyle" name="photo"
+								id="photoContent" placeholder="Upload Photo" required="required" />
 
-							<label for="singnature">Signature:</label>
-							<form:input type="file" class="filestyle" path="studentSignature"
-								id="studentSignature" placeholder="Upload Signature"
-								required="required" />
-
-
-
-							<label for="disqualifiedFlag">Were you ever rustigated/
-								expelled/ disqualified/ debarred from appearing at the
-								examination?</label>
+							<form:label path="signatureContent" for="singature">Signature:</form:label>
+							<input type="file" class="filestyle" name="signature"
+								id="signatureContent" placeholder="Upload Signature"
+								required="required" /> 
+								
+								<label for="disqualifiedFlag">Were
+								you ever rustigated/ expelled/ disqualified/ debarred from
+								appearing at the examination?</label>
 							<form:select path="disqualifiedDescription.disqualifiedFlag"
 								class="form-control"
 								id="disqualifiedDescription.disqualifiedFlag"
@@ -354,66 +353,119 @@
 							</p>
 							<p align="left">
 								<strong>Qualifying Papers:</strong>
+
 								<form:select type="text" class="form-control"
-									path="subjects[0]" id="subjects"
+									path="subjects[0].id" id="subjects"
 									placeholder="Select Qualifying Paper" required="required">
 									<option disabled selected></option>
-									<c:forEach var="qualifyingSubject" items="${qualifyingSubjects}">
-										<option value="${qualifyingSubject}">${qualifyingSubject.paperName}</option>
-										
+									<c:forEach var="qualifyingPaper" items="${qualifyingPapers}">
+										<option value="${qualifyingPaper.id}">(${qualifyingPaper.paperNumber}
+											, ${qualifyingPaper.paperName})</option>
+
 									</c:forEach>
 								</form:select>
-							</p>
 
-<!-- 							<p align="left"> -->
-<!-- 								<strong>Compulsary Papers:</strong> -->
-<%-- 								<form:input type="text" class="form-control" --%>
-<%-- 									path="subjects[1].paperName" id="subjects" --%>
-<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
-<!-- 							</p> -->
+								<!-- 							</p> -->
+								<!-- 							<p align="left"> -->
+								<!-- 								<strong>Compulsary Papers:</strong> -->
+								<%-- 								<form:select type="text" class="form-control" --%>
+								<%-- 									path="subjects[1].id" id="subjects" --%>
+								<%-- 									placeholder="Select Compulsary Paper" required="required"> --%>
+								<!-- 									<option disabled selected></option> -->
+								<%-- 									<c:forEach var="compulsaryPaper" items="${compulsaryPapers}"> --%>
+								<%-- 										<option value="${compulsaryPaper.id}">(${compulsaryPaper.paperNumber} --%>
+								<%-- 											, ${compulsaryPaper.paperName})</option> --%>
 
-<!-- 							<p align="left"> -->
-<!-- 								<strong>Core Course(Hons):</strong> -->
-<%-- 								<form:input type="text" class="form-control" --%>
-<%-- 									path="subjects[2].paperName" id="subjects" --%>
-<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
-<!-- 							</p> -->
+								<%-- 									</c:forEach> --%>
+								<%-- 								</form:select> --%>
+								<!-- 							</p> -->
+								<!-- 							<p align="left"> -->
+								<!-- 								<strong>Core Course(Hons):</strong> -->
+								<%-- 								<form:select type="text" class="form-control" --%>
+								<%-- 									path="subjects[2].id" id="subjects" --%>
+								<%-- 									placeholder="Select Core Courses(Hons)" required="required"> --%>
+								<!-- 									<option disabled selected></option> -->
+								<%-- 									<c:forEach var="coreCourseHons" items="${coreCoursesHons}"> --%>
+								<%-- 										<option value="${coreCourseHons.id}">(${coreCourseHons.paperNumber} --%>
+								<%-- 											, ${coreCourseHons.paperName})</option> --%>
 
-<!-- 							<p align="left"> -->
-<!-- 								<strong>Core Couse(Subsidiary):</strong> -->
-<%-- 								<form:input type="text" class="form-control" --%>
-<%-- 									path="subjects[3].paperName" id="subjects" --%>
-<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
-<!-- 							</p> -->
+								<%-- 									</c:forEach> --%>
+								<%-- 								</form:select> --%>
+								<!-- 							</p> -->
 
-<!-- 							<p align="left"> -->
-<!-- 								<strong>Choice Based Course (Elective):</strong> -->
-<%-- 								<form:input type="text" class="form-control" --%>
-<%-- 									path="subjects[4].paperName" id="subjects" --%>
-<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
-<!-- 							</p> -->
+								<!-- 							<p align="left"> -->
+								<!-- 								<strong>Core Course(Subsidiary):</strong> -->
+								<%-- 								<form:select type="text" class="form-control" --%>
+								<%-- 									path="subjects[3].id" id="subjects" --%>
+								<%-- 									placeholder="Select Core Course(Subsidiary)" --%>
+								<%-- 									required="required"> --%>
+								<!-- 									<option disabled selected></option> -->
+								<%-- 									<c:forEach var="coreCourseSubsidiary" --%>
+								<%-- 										items="${coreCoursesSubsidiary}"> --%>
+								<%-- 										<option value="${coreCourseSubsidiary.id}">(${coreCourseSubsidiary.paperNumber} --%>
+								<%-- 											, ${coreCourseSubsidiary.paperName})</option> --%>
 
-<!-- 							<p align="left"> -->
-<!-- 								<strong>Skill Enhancement Course(SEC):</strong> -->
-<%-- 								<form:input type="text" class="form-control" --%>
-<%-- 									path="subjects[5].paperName" id="subjects" --%>
-<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
-<!-- 							</p> -->
+								<%-- 									</c:forEach> --%>
+								<%-- 								</form:select> --%>
+								<!-- 							</p> -->
+								<!-- 							<p align="left"> -->
+								<!-- 								<strong>Choice Based Course (Elective):</strong> -->
+								<%-- 								<form:select type="text" class="form-control" --%>
+								<%-- 									path="subjects[4].id" id="subjects" --%>
+								<%-- 									placeholder="Select Choice Based Course (Elective)" --%>
+								<%-- 									required="required"> --%>
+								<!-- 									<option disabled selected></option> -->
+								<%-- 									<c:forEach var="choiceBasedCourse" --%>
+								<%-- 										items="${choiceBasedCourses}"> --%>
+								<%-- 										<option value="${choiceBasedCourse.id}">(${choiceBasedCourse.paperNumber} --%>
+								<%-- 											, ${choiceBasedCourse.paperName})</option> --%>
 
-<!-- 							<p align="left"> -->
-<!-- 								<strong>Ability Skill Enhancement(AECC):</strong> -->
-<%-- 								<form:input type="text" class="form-control" --%>
-<%-- 									path="subjects[6].paperName" id="subjects" --%>
-<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
-<!-- 							</p> -->
+								<%-- 									</c:forEach> --%>
+								<%-- 								</form:select> --%>
+								<!-- 							</p> -->
+								<!-- 							<p align="left"> -->
+								<!-- 								<strong>Skill Enhancement Course(SEC):</strong> -->
+								<%-- 								<form:select type="text" class="form-control" --%>
+								<%-- 									path="subjects[5].id" id="subjects" --%>
+								<%-- 									placeholder="Select Skill Enhancement Course(SEC)" --%>
+								<%-- 									required="required"> --%>
+								<!-- 									<option disabled selected></option> -->
+								<%-- 									<c:forEach var="skillEnhancementCourse" --%>
+								<%-- 										items="${skillEnhancementCourses}"> --%>
+								<%-- 										<option value="${skillEnhancementCourse.id}">(${skillEnhancementCourse.paperNumber} --%>
+								<%-- 											, ${skillEnhancementCourse.paperName})</option> --%>
 
-<!-- 							<p align="left"> -->
-<!-- 								<strong>Audit Course:</strong> -->
-<%-- 								<form:input type="text" class="form-control" --%>
-<%-- 									path="subjects[7].paperName" id="subjects" --%>
-<%-- 									placeholder="Select Qualifying Paper" required="required" /> --%>
-<!-- 							</p> -->
+								<%-- 									</c:forEach> --%>
+								<%-- 								</form:select> --%>
+								<!-- 							</p> -->
+								<!-- 							<p align="left"> -->
+								<!-- 								<strong>Ability Skill Enhancement(AECC):</strong> -->
+								<%-- 								<form:select type="text" class="form-control" --%>
+								<%-- 									path="subjects[6].id" id="subjects" --%>
+								<%-- 									placeholder="Select Ability Skill Enhancement(AECC):" --%>
+								<%-- 									required="required"> --%>
+								<!-- 									<option disabled selected></option> -->
+								<%-- 									<c:forEach var="abilityEnhancementCourse" --%>
+								<%-- 										items="${abilityEnhancementCourses}"> --%>
+								<%-- 										<option value="${abilityEnhancementCourse.id}">(${abilityEnhancementCourse.paperNumber} --%>
+								<%-- 											, ${abilityEnhancementCourse.paperName})</option> --%>
 
+								<%-- 									</c:forEach> --%>
+								<%-- 								</form:select> --%>
+								<!-- 							</p> -->
+								<!-- 							<p align="left"> -->
+								<!-- 								<strong>Audit Course:</strong> -->
+								<%-- 								<form:select type="text" class="form-control" --%>
+								<%-- 									path="subjects[7].id" id="subjects" --%>
+								<%-- 									placeholder="Select Qualifying Paper" required="required"> --%>
+								<!-- 									<option disabled selected></option> -->
+								<%-- 									<c:forEach var="auditCourse" items="${auditCourses}"> --%>
+								<%-- 										<option value="${auditCourse.id}">(${auditCourse.paperNumber} --%>
+								<%-- 											, ${auditCourse.paperName})</option> --%>
+
+								<%-- 									</c:forEach> --%>
+								<%-- 								</form:select> --%>
+								<!-- 							</p> -->
 						</div>
 						<button type="submit" value="Submit" name="edit"
 							class="btn btn-info active">Submit</button>
